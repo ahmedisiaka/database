@@ -1,283 +1,1602 @@
 [
     {
-        "question": "Which Byzantine Emperor codified Roman law into the Corpus Juris Civilis, a monumental work completed in 534 AD?",
-        "options": ["Constantine the Great", "Theodosius II", "Justinian I", "Heraclius"],
-        "answer": "Justinian I",
-        "id": "H001",
-        "level": "hard",
-        "topic": "History"
+      "question": "Which layer of the Earth's atmosphere lies directly above the troposphere and contains the ozone layer?",
+      "options": ["Mesosphere", "Thermosphere", "Stratosphere", "Exosphere"],
+      "answer": "Stratosphere",
+      "id": "H253",
+      "level": "hard",
+      "topic": "Earth/Atmosphere"
     },
     {
-        "question": "What specific type of plastid is responsible for the long-term storage of starch (amylose and amylopectin) in plant cells?",
-        "options": ["Chromoplast", "Amyloplast", "Leucoplast", "Chloroplast"],
-        "answer": "Amyloplast",
-        "id": "H002",
-        "level": "hard",
-        "topic": "Nature/Biology"
+      "question": "What is the term for a fast-moving, destructive current of hot gas and volcanic matter that flows down the side of a volcano?",
+      "options": ["Lahar", "Pyroclastic Flow", "Aa Flow", "Basaltic Surge"],
+      "answer": "Pyroclastic Flow",
+      "id": "H254",
+      "level": "hard",
+      "topic": "Earth/Geology"
     },
     {
-        "question": "In the study of fluid dynamics, the point where the effects of viscosity are negligible and flow can be described as incompressible and irrotational is called the what?",
-        "options": ["Stokes' Boundary", "Turbulent Layer", "Potential Flow", "Laminar Region"],
-        "answer": "Potential Flow",
-        "id": "H003",
-        "level": "hard",
-        "topic": "Academics/Physics"
+      "question": "Which narrow strait separates the continents of Asia and North America?",
+      "options": ["Strait of Hormuz", "Sunda Strait", "Bering Strait", "Strait of Magellan"],
+      "answer": "Bering Strait",
+      "id": "H255",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "The philosophical concept that reality fundamentally consists of two separate and distinct substances, mind and matter, is known as which of the following?",
-        "options": ["Monism", "Idealism", "Solipsism", "Dualism"],
-        "answer": "Dualism",
-        "id": "H004",
-        "level": "hard",
-        "topic": "Life/Philosophy"
+      "question": "The **Danakil Depression**, one of the hottest places on Earth and below sea level, is primarily located in which African country?",
+      "options": ["Kenya", "Sudan", "Ethiopia", "Djibouti"],
+      "answer": "Ethiopia",
+      "id": "H256",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "Which Nobel Laureate wrote the 1929 novel *Look Homeward, Angel*, a highly autobiographical coming-of-age story?",
-        "options": ["William Faulkner", "Ernest Hemingway", "Thomas Wolfe", "John Steinbeck"],
-        "answer": "Thomas Wolfe",
-        "id": "H005",
-        "level": "hard",
-        "topic": "Biography/Academics"
+      "question": "Which type of fault is characterized by the hanging wall moving down relative to the footwall, usually due to tensional stress?",
+      "options": ["Strike-slip fault", "Reverse fault", "Normal fault", "Thrust fault"],
+      "answer": "Normal fault",
+      "id": "H257",
+      "level": "hard",
+      "topic": "Earth/Geology"
     },
     {
-        "question": "What is the name of the effect where the pKa of a carboxylic acid is lowered by the presence of an electron-withdrawing group nearby?",
-        "options": ["Tautomerism", "Inductive Effect", "Hyperconjugation", "Steric Hindrance"],
-        "answer": "Inductive Effect",
-        "id": "H006",
-        "level": "hard",
-        "topic": "Academics/Chemistry"
+      "question": "What is the deepest point in all of Earth's oceans?",
+      "options": ["Tonga Trench", "Puerto Rico Trench", "Mariana Trench", "Java Trench"],
+      "answer": "Mariana Trench",
+      "id": "H258",
+      "level": "hard",
+      "topic": "Earth/Oceanography"
     },
     {
-        "question": "The first permanent English settlement in North America, Jamestown (1607), was primarily located in the territory of which Native American confederacy?",
-        "options": ["Iroquois Confederacy", "Powhatan Confederacy", "Algonquin Tribes", "Cherokee Nation"],
-        "answer": "Powhatan Confederacy",
-        "id": "H007",
-        "level": "hard",
-        "topic": "History"
+      "question": "Which river forms the boundary between Mexico and the United States for much of its length?",
+      "options": ["Colorado River", "Rio Grande", "Mississippi River", "Columbia River"],
+      "answer": "Rio Grande",
+      "id": "H259",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "In computer science, what term describes a data structure that follows the Last-In, First-Out (LIFO) principle?",
-        "options": ["Queue", "Hash Table", "Stack", "Linked List"],
-        "answer": "Stack",
-        "id": "H008",
-        "level": "hard",
-        "topic": "School/Academics"
+      "question": "What is the scientific term for the process of ice turning directly into water vapor, bypassing the liquid phase?",
+      "options": ["Evaporation", "Sublimation", "Condensation", "Deposition"],
+      "answer": "Sublimation",
+      "id": "H260",
+      "level": "hard",
+      "topic": "Earth/Atmosphere"
     },
     {
-        "question": "Which species of whale is known to have the largest brain, weighing up to 9 kilograms, and is famous for its massive, box-shaped head?",
-        "options": ["Blue Whale", "Humpback Whale", "Sperm Whale", "Fin Whale"],
-        "answer": "Sperm Whale",
-        "id": "H009",
-        "level": "hard",
-        "topic": "Nature"
+      "question": "Which major mountain range runs along the eastern coast of Australia?",
+      "options": ["Great Dividing Range", "Australian Alps", "Flinders Ranges", "MacDonnell Ranges"],
+      "answer": "Great Dividing Range",
+      "id": "H261",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "The political philosophy of Niccolò Machiavelli is primarily outlined in which of his seminal works?",
-        "options": ["Discourses on Livy", "The Prince", "The Art of War", "Florentine Histories"],
-        "answer": "The Prince",
-        "id": "H010",
-        "level": "hard",
-        "topic": "Life/History"
+      "question": "The **Palaeolithic** era is primarily characterized by the use of what type of tool?",
+      "options": ["Bronze tools", "Polished stone tools", "Rough stone tools", "Iron tools"],
+      "answer": "Rough stone tools",
+      "id": "H262",
+      "level": "hard",
+      "topic": "Earth/History"
     },
     {
-        "question": "If a triangle has side lengths of 5, 12, and 13, the inradius (radius of the inscribed circle) is what length?",
-        "options": ["2", "3", "2.5", "1"],
-        "answer": "2",
-        "id": "H011",
-        "level": "hard",
-        "topic": "Academics/Math"
+      "question": "Which continent is considered the most linguistically diverse, with over 2,000 languages spoken?",
+      "options": ["Asia", "Africa", "South America", "Europe"],
+      "answer": "Africa",
+      "id": "H263",
+      "level": "hard",
+      "topic": "Earth/Continents"
     },
     {
-        "question": "Which 19th-century German pathologist is widely considered the founder of modern pathology and is credited with the famous aphorism: 'Omnis cellula e cellula' (all cells come from cells)?",
-        "options": ["Louis Pasteur", "Robert Koch", "Rudolf Virchow", "Gregor Mendel"],
-        "answer": "Rudolf Virchow",
-        "id": "H012",
-        "level": "hard",
-        "topic": "Biography/Academics"
+      "question": "What is the capital city of Canada?",
+      "options": ["Toronto", "Montreal", "Vancouver", "Ottawa"],
+      "answer": "Ottawa",
+      "id": "H264",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "What chemical compound is essential for the formation of the exoskeletons of arthropods, such as insects and crustaceans?",
-        "options": ["Cellulose", "Keratin", "Chitin", "Lignin"],
-        "answer": "Chitin",
-        "id": "H013",
-        "level": "hard",
-        "topic": "Nature/Biology"
+      "question": "The **Kalahari Desert** spans parts of South Africa, Botswana, and which other country?",
+      "options": ["Namibia", "Zimbabwe", "Zambia", "Angola"],
+      "answer": "Namibia",
+      "id": "H265",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "The Treaty of Utrecht, signed in 1713, concluded which major European conflict?",
-        "options": ["The Thirty Years' War", "The War of the Spanish Succession", "The Seven Years' War", "The French and Indian War"],
-        "answer": "The War of the Spanish Succession",
-        "id": "H014",
-        "level": "hard",
-        "topic": "History"
+      "question": "What is the term for the time when the sun is at its most northern or southern extreme in the sky, marking the longest and shortest days?",
+      "options": ["Equinox", "Aphelion", "Perihelion", "Solstice"],
+      "answer": "Solstice",
+      "id": "H266",
+      "level": "hard",
+      "topic": "Earth/Astronomy"
     },
     {
-        "question": "In music theory, what is the term for a melodic phrase that is repeated at different pitch levels, often ascending or descending by step?",
-        "options": ["Ostinato", "Motif", "Sequence", "Cadence"],
-        "answer": "Sequence",
-        "id": "H015",
-        "level": "hard",
-        "topic": "School/Academics"
+      "question": "Which Italian volcano is known for its persistent eruption of glowing lava and is one of the most active in Europe?",
+      "options": ["Vesuvius", "Etna", "Stromboli", "Mount Fuji"],
+      "answer": "Stromboli",
+      "id": "H267",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "Which quantum phenomenon describes the probability that a particle will pass through a potential energy barrier, even if the particle's total energy is less than the barrier's height?",
-        "options": ["Quantum Entanglement", "Heisenberg Uncertainty", "Quantum Tunneling", "Wave-Particle Duality"],
-        "answer": "Quantum Tunneling",
-        "id": "H016",
-        "level": "hard",
-        "topic": "Academics/Physics"
+      "question": "What is the primary gas, after nitrogen and oxygen, found in Earth's atmosphere?",
+      "options": ["Carbon Dioxide", "Neon", "Argon", "Helium"],
+      "answer": "Argon",
+      "id": "H268",
+      "level": "hard",
+      "topic": "Earth/Atmosphere"
     },
     {
-        "question": "Which Greek philosopher is credited with founding the Stoic school of philosophy in Athens?",
-        "options": ["Epicurus", "Zeno of Citium", "Diogenes of Sinope", "Heraclitus"],
-        "answer": "Zeno of Citium",
-        "id": "H017",
-        "level": "hard",
-        "topic": "History/Life"
+      "question": "The **Great Rift Valley** system extends from the Middle East down to which Southern African country?",
+      "options": ["Nigeria", "South Africa", "Mozambique", "Botswana"],
+      "answer": "Mozambique",
+      "id": "H269",
+      "level": "hard",
+      "topic": "Earth/Geology"
     },
     {
-        "question": "The term *xylem* is derived from the Greek word for which material that it primarily transports in plants?",
-        "options": ["Sugar", "Sap", "Wood", "Water"],
-        "answer": "Wood",
-        "id": "H018",
-        "level": "hard",
-        "topic": "Nature/Biology"
+      "question": "Which ocean current brings warm water from the tropical North Pacific to the western coast of North America?",
+      "options": ["California Current", "Kuroshio Current", "Oyashio Current", "Alaska Current"],
+      "answer": "Kuroshio Current",
+      "id": "H270",
+      "level": "hard",
+      "topic": "Earth/Oceanography"
     },
     {
-        "question": "Who was the Soviet scientist famous for his work on the theory of the chemical structure of organic compounds, particularly aromatic systems?",
-        "options": ["Dmitri Mendeleev", "Alexander Butlerov", "Nikolay Semyonov", "Ivan Pavlov"],
-        "answer": "Alexander Butlerov",
-        "id": "H019",
-        "level": "hard",
-        "topic": "Biography/Chemistry"
+      "question": "The **Pampas** are fertile lowlands primarily found in which South American country?",
+      "options": ["Brazil", "Chile", "Argentina", "Peru"],
+      "answer": "Argentina",
+      "id": "H271",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "What is the common name for the geological fault line that runs through California and is responsible for many of the region's major earthquakes?",
-        "options": ["Hayward Fault", "New Madrid Fault", "San Andreas Fault", "Cascadia Subduction Zone"],
-        "answer": "San Andreas Fault",
-        "id": "H020",
-        "level": "hard",
-        "topic": "Nature"
+      "question": "What type of metamorphic rock is formed from the metamorphism of sandstone?",
+      "options": ["Marble", "Slate", "Quartzite", "Gneiss"],
+      "answer": "Quartzite",
+      "id": "H272",
+      "level": "hard",
+      "topic": "Earth/Geology"
     },
     {
-        "question": "The literary device of using an object or idea to represent a completely different idea, usually abstract, is known as what?",
-        "options": ["Metaphor", "Allegory", "Synecdoche", "Symbolism"],
-        "answer": "Symbolism",
-        "id": "H021",
-        "level": "hard",
-        "topic": "School/Academics"
+      "question": "Which European capital city is situated on the confluence of the Sava and Danube rivers?",
+      "options": ["Vienna, Austria", "Budapest, Hungary", "Belgrade, Serbia", "Bratislava, Slovakia"],
+      "answer": "Belgrade, Serbia",
+      "id": "H273",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "In economics, the condition where the government's spending exceeds its revenue over a specified period is called a what?",
-        "options": ["Trade Deficit", "National Debt", "Budget Deficit", "Fiscal Surplus"],
-        "answer": "Budget Deficit",
-        "id": "H022",
-        "level": "hard",
-        "topic": "Academics"
+      "question": "What is the primary cause of the deflection of ocean currents and winds, known as the Coriolis effect?",
+      "options": ["Earth's magnetic field", "Gravitational pull of the Moon", "Earth's rotation", "Variations in air pressure"],
+      "answer": "Earth's rotation",
+      "id": "H274",
+      "level": "hard",
+      "topic": "Earth/Physics"
     },
     {
-        "question": "Who composed the opera *The Marriage of Figaro*, first performed in Vienna in 1786?",
-        "options": ["Ludwig van Beethoven", "Franz Schubert", "Wolfgang Amadeus Mozart", "Joseph Haydn"],
-        "answer": "Wolfgang Amadeus Mozart",
-        "id": "H023",
-        "level": "hard",
-        "topic": "Academics/Biography"
+      "question": "The **Caucasus Mountains** are located at the junction of Europe and Asia, between the Black Sea and which other sea?",
+      "options": ["Adriatic Sea", "Aegean Sea", "Caspian Sea", "Red Sea"],
+      "answer": "Caspian Sea",
+      "id": "H275",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "The ancient Greek city of Byzantium was renamed Constantinople in 330 AD by which Roman Emperor?",
-        "options": ["Diocletian", "Augustus", "Constantine I", "Theodosius I"],
-        "answer": "Constantine I",
-        "id": "H024",
-        "level": "hard",
-        "topic": "History"
+      "question": "What term describes the boundary between two converging tectonic plates where one subducts beneath the other?",
+      "options": ["Transform boundary", "Mid-ocean ridge", "Subduction zone", "Rift valley"],
+      "answer": "Subduction zone",
+      "id": "H276",
+      "level": "hard",
+      "topic": "Earth/Geology"
     },
     {
-        "question": "Which hormone is primarily responsible for regulating the body's sleep-wake cycles (circadian rhythm)?",
-        "options": ["Adrenaline", "Insulin", "Melatonin", "Thyroxine"],
-        "answer": "Melatonin",
-        "id": "H025",
-        "level": "hard",
-        "topic": "Life/Nature"
+      "question": "Which island is the only one in the world that is also classified as a continent?",
+      "options": ["Greenland", "Madagascar", "Australia", "New Zealand"],
+      "answer": "Australia",
+      "id": "H277",
+      "level": "hard",
+      "topic": "Earth/Continents"
     },
     {
-        "question": "What is the specialized name for the layer of the Earth's atmosphere that contains the ozone layer?",
-        "options": ["Troposphere", "Stratosphere", "Mesosphere", "Thermosphere"],
-        "answer": "Stratosphere",
-        "id": "H026",
-        "level": "hard",
-        "topic": "Nature"
+      "question": "The **Ganges River** flows primarily through India and which other country before emptying into the Bay of Bengal?",
+      "options": ["Nepal", "Pakistan", "Bangladesh", "China"],
+      "answer": "Bangladesh",
+      "id": "H278",
+      "level": "hard",
+      "topic": "Geography"
     },
     {
-        "question": "In mathematics, a function that is equal to its own derivative is an exponential function of the form $f(x) = ce^x$. What is $c$?",
-        "options": ["The integration constant", "The initial value", "The Euler's number", "The slope"],
-        "answer": "The initial value",
-        "id": "H027",
-        "level": "hard",
-        "topic": "Academics/Math"
+      "question": "In which geological epoch did modern humans (Homo sapiens) first appear?",
+      "options": ["Miocene", "Pliocene", "Pleistocene", "Holocene"],
+      "answer": "Pleistocene",
+      "id": "H279",
+      "level": "hard",
+      "topic": "Earth/Geology"
     },
     {
-        "question": "Which Renaissance humanist and author wrote *The Praise of Folly*, a satirical attack on corrupt practices of the Catholic Church and European society?",
-        "options": ["Thomas More", "Desiderius Erasmus", "Michel de Montaigne", "Giovanni Boccaccio"],
-        "answer": "Desiderius Erasmus",
-        "id": "H028",
-        "level": "hard",
-        "topic": "Biography/History"
+      "question": "Which of the following is an example of an intrusive igneous rock?",
+      "options": ["Basalt", "Pumice", "Obsidian", "Granite"],
+      "answer": "Granite",
+      "id": "H280",
+      "level": "hard",
+      "topic": "Earth/Geology"
     },
     {
-        "question": "What term describes the process where a solid converts directly into a gas without passing through the liquid phase?",
-        "options": ["Deposition", "Sublimation", "Vaporization", "Condensation"],
-        "answer": "Sublimation",
-        "id": "H029",
-        "level": "hard",
-        "topic": "Academics/Chemistry"
+      "question": "Which European city is known as the 'Venice of the North' due to its many canals and bridges?",
+      "options": ["Amsterdam, Netherlands", "Hamburg, Germany", "St. Petersburg, Russia", "Bruges, Belgium"],
+      "answer": "St. Petersburg, Russia",
+      "id": "H281",
+      "level": "hard",
+      "topic": "Geography"
     },
-    
-        {
-          "question": "Which is the **only continent** that has land in all four of the Earth's hemispheres (Northern, Southern, Eastern, and Western)?",
-          "options": ["Asia", "Africa", "North America", "Antarctica"],
-          "answer": "Africa",
-          "id": "H028",
-          "level": "hard",
-          "topic": "Academics/Geography"
-        },
-        {
-          "question": "The vast majority of the landmass known as Oceania sits on one tectonic plate. Which is the **only major continent** that does not have a single active volcano on its mainland?",
-          "options": ["South America", "Australia", "Europe", "North America"],
-          "answer": "Australia",
-          "id": "H029",
-          "level": "hard",
-          "topic": "Academics/Geography"
-        },
-        {
-          "question": "Which continent holds the record for the largest contiguous landmass that strictly adheres to **zero time zone diversity**, meaning the entire continent uses one single official time?",
-          "options": ["Africa", "Antarctica", "North America", "Europe"],
-          "answer": "Antarctica",
-          "id": "H030",
-          "level": "hard",
-          "topic": "Academics/Geography"
-        },
-        {
-          "question": "Which of the six inhabited continents has its **highest elevation** (Mount Everest) and its **lowest terrestrial elevation** (the shore of the Dead Sea) within its boundaries?",
-          "options": ["Africa", "Asia", "North America", "South America"],
-          "answer": "Asia",
-          "id": "H031",
-          "level": "hard",
-          "topic": "Academics/Geography"
-        },
-        {
-          "question": "The Continental Divide of the Americas separates water flow to the Pacific from the Atlantic/Arctic. Which continent is **NOT crossed** by this major hydrological feature?",
-          "options": ["North America", "South America", "Africa", "Asia"],
-          "answer": "Africa",
-          "id": "H032",
-          "level": "hard",
-          "topic": "Academics/Geography"
-        },
     {
-        "question": "Which West African empire, flourishing between the 7th and 13th centuries, controlled trans-Saharan trade routes, primarily trading gold and salt?",
-        "options": ["Mali Empire", "Songhai Empire", "Ghana Empire", "Kanem-Bornu Empire"],
-        "answer": "Ghana Empire",
-        "id": "H030",
-        "level": "hard",
-        "topic": "History"
+      "question": "The phenomenon of **Tidal Locking** primarily affects the relationship between Earth and which celestial body?",
+      "options": ["The Sun", "Jupiter", "Venus", "The Moon"],
+      "answer": "The Moon",
+      "id": "H282",
+      "level": "hard",
+      "topic": "Earth/Astronomy"
+    },
+    {
+      "question": "Which South American country is landlocked?",
+      "options": ["Chile", "Ecuador", "Paraguay", "Colombia"],
+      "answer": "Paraguay",
+      "id": "H283",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What is the largest known **supervolcano** in North America, with a caldera covering over 60 miles?",
+      "options": ["Mount St. Helens", "Mount Rainier", "Yellowstone Caldera", "Long Valley Caldera"],
+      "answer": "Yellowstone Caldera",
+      "id": "H284",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "The **Sargasso Sea**, known for its calm waters and large amounts of Sargassum seaweed, is located entirely within which ocean?",
+      "options": ["Pacific Ocean", "Indian Ocean", "Atlantic Ocean", "Arctic Ocean"],
+      "answer": "Atlantic Ocean",
+      "id": "H285",
+      "level": "hard",
+      "topic": "Earth/Oceanography"
+    },
+    {
+      "question": "Which continent is home to both the highest and lowest points on Earth?",
+      "options": ["Africa", "Asia", "North America", "South America"],
+      "answer": "Asia",
+      "id": "H286",
+      "level": "hard",
+      "topic": "Earth/Continents"
+    },
+    {
+      "question": "The **Maginot Line**, a defensive fortification built before World War II, was primarily constructed by which country?",
+      "options": ["Germany", "France", "Belgium", "United Kingdom"],
+      "answer": "France",
+      "id": "H287",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "In the sequence 1, 4, 9, 16, 25, ?, what is the next number?",
+      "options": ["30", "36", "49", "40"],
+      "answer": "36",
+      "id": "H288",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "If all trees are plants, and no fish are trees, can you conclude that no fish are plants?",
+      "options": ["Yes, definitely", "No, definitely not", "Cannot be determined", "Only if the plants are trees"],
+      "answer": "No, definitely not",
+      "id": "H289",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "A group of friends spent $100 on a dinner. If one person pays double the amount of any other single person, how much did the person paying double pay?",
+      "options": ["$20", "$25", "$30", "$33.33"],
+      "answer": "$25",
+      "id": "H290",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "If $3x - 5 = 10$, what is the value of $6x + 2$?",
+      "options": ["32", "17", "15", "20"],
+      "answer": "32",
+      "id": "H291",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "Which of the following is the odd one out: Car, Truck, Motorcycle, Bicycle?",
+      "options": ["Car", "Truck", "Motorcycle", "Bicycle"],
+      "answer": "Bicycle",
+      "id": "H292",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "What has an eye but cannot see?",
+      "options": ["A needle", "A key", "A mirror", "A window"],
+      "answer": "A needle",
+      "id": "H293",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "Find the missing number in the series: 1, 8, 27, ?, 125, 216",
+      "options": ["36", "49", "64", "81"],
+      "answer": "64",
+      "id": "H294",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "The probability of drawing a Queen from a standard 52-card deck is $1/13$. What is the probability of drawing a Queen, *not* replacing it, and then drawing another Queen?",
+      "options": ["$1/13$", "$1/169$", "$1/221$", "$1/1326$"],
+      "answer": "$1/221$",
+      "id": "H295",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "If a square has an area of $16 cm^2$, what is the length of its diagonal?",
+      "options": ["4 cm", "$4\\sqrt{2}$ cm", "8 cm", "$\\sqrt{16}$ cm"],
+      "answer": "$4\\sqrt{2}$ cm",
+      "id": "H296",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What question can you never answer 'yes' to?",
+      "options": ["Are you asleep yet?", "Are you lying?", "Can you hear me?", "Is the sky blue?"],
+      "answer": "Are you asleep yet?",
+      "id": "H297",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "If a vehicle travels 100 miles at 50 mph and then 100 miles at 25 mph, what is the average speed for the entire trip?",
+      "options": ["37.5 mph", "33.3 mph", "40 mph", "35 mph"],
+      "answer": "33.3 mph",
+      "id": "H298",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "Find the next letter in the sequence: J, F, M, A, M, J, J, A, S, O, N, ?",
+      "options": ["D", "J", "L", "T"],
+      "answer": "D",
+      "id": "H299",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "How many distinct ways can the letters of the word 'MISSISSIPPI' be arranged?",
+      "options": ["34,650", "11!", "1,260", "28,350"],
+      "answer": "34,650",
+      "id": "H300",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "A tank is filled by a pipe in 5 hours and emptied by another in 8 hours. If both are open, how long will it take to fill the tank?",
+      "options": ["10 hours", "13 hours", "13.33 hours", "40/3 hours"],
+      "answer": "40/3 hours",
+      "id": "H301",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "If 'Monday' is 1, 'Tuesday' is 2, and so on, what day is '7'?",
+      "options": ["Sunday", "Saturday", "Friday", "Monday"],
+      "answer": "Sunday",
+      "id": "H302",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "What is the result of $2^0 + 2^1 + 2^2 + 2^3$?",
+      "options": ["10", "14", "15", "16"],
+      "answer": "15",
+      "id": "H303",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "If $x$ is 8 more than $y$, and the sum of $x$ and $y$ is 42, what is the value of $x$?",
+      "options": ["25", "17", "34", "27"],
+      "answer": "25",
+      "id": "H304",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "In which mathematical field is the concept of a **Turing Machine** central?",
+      "options": ["Calculus", "Number Theory", "Computer Science/Theory of Computation", "Topology"],
+      "answer": "Computer Science/Theory of Computation",
+      "id": "H305",
+      "level": "hard",
+      "topic": "Academics/Tech"
+    },
+    {
+      "question": "I have cities, but no houses; forests, but no trees; and water, but no fish. What am I?",
+      "options": ["A map", "A globe", "A desert", "A painting"],
+      "answer": "A map",
+      "id": "H306",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "What is the missing number in the series: 3, 5, 9, 17, 33, ?",
+      "options": ["49", "65", "64", "51"],
+      "answer": "65",
+      "id": "H307",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "If the price of an item is reduced by $20\\%$, by what percentage must the new price be increased to get back to the original price?",
+      "options": ["$20\\%$", "$25\\%$", "$30\\%$", "$50\\%$"],
+      "answer": "$25\\%$",
+      "id": "H308",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "What is the limit of the function $f(x) = \\frac{x^2 - 4}{x - 2}$ as $x$ approaches 2?",
+      "options": ["0", "2", "4", "Does not exist"],
+      "answer": "4",
+      "id": "H309",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the missing pair of numbers in the analogy: (7: 343) :: (6: ?)",
+      "options": ["36", "108", "216", "18"],
+      "answer": "216",
+      "id": "H310",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "A worker's salary is increased by $10\\%$. The next month, it is decreased by $10\\%$. What is the net percentage change in their salary?",
+      "options": ["No change", "$1\\%$ increase", "$1\\%$ decrease", "$10\\%$ decrease"],
+      "answer": "$1\\%$ decrease",
+      "id": "H311",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "What is the term for a deductive argument that, despite being logically valid, relies on two or more premises that are false or questionable?",
+      "options": ["Syllogism", "Non sequitur", "Fallacy of composition", "Sound argument"],
+      "answer": "Syllogism",
+      "id": "H312",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "What is the only three-digit number that is the sum of the cubes of its digits (an Armstrong number)?",
+      "options": ["153", "370", "371", "407"],
+      "answer": "153",
+      "id": "H313",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "If you are running in a race and you pass the person in second place, what position are you in?",
+      "options": ["First", "Second", "Third", "Last"],
+      "answer": "Second",
+      "id": "H314",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "The total number of faces on an Icosahedron (a 20-sided regular polyhedron) is:",
+      "options": ["12", "30", "20", "60"],
+      "answer": "20",
+      "id": "H315",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "If 'LIGHT' is coded as '23456' and 'HEAVY' is coded as '78910', how would 'VITAL' be coded?",
+      "options": ["19542", "19842", "18542", "19562"],
+      "answer": "19542",
+      "id": "H316",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "What is the term for a differential equation that involves only the first derivative of the dependent variable?",
+      "options": ["Partial differential equation", "Homogeneous equation", "Linear equation", "First-order differential equation"],
+      "answer": "First-order differential equation",
+      "id": "H317",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "The perimeter of an equilateral triangle is 18 cm. What is its area?",
+      "options": ["$9\\sqrt{3} cm^2$", "$18\\sqrt{3} cm^2$", "$36 cm^2$", "$9 cm^2$"],
+      "answer": "$9\\sqrt{3} cm^2$",
+      "id": "H318",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "If you have 5 red socks and 5 blue socks in a drawer, what is the minimum number of socks you need to pull out to guarantee you have a matching pair?",
+      "options": ["2", "3", "5", "6"],
+      "answer": "3",
+      "id": "H319",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "A river flows at 3 mph. A boat can travel 12 mph in still water. How fast can the boat travel downstream?",
+      "options": ["9 mph", "12 mph", "15 mph", "18 mph"],
+      "answer": "15 mph",
+      "id": "H320",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "Which word is the odd one out: Hypothesis, Theorem, Axiom, Conjecture?",
+      "options": ["Hypothesis", "Theorem", "Axiom", "Conjecture"],
+      "answer": "Theorem",
+      "id": "H321",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "If the roots of a quadratic equation are 3 and 5, what is the equation?",
+      "options": ["$x^2 + 8x + 15 = 0$", "$x^2 - 8x - 15 = 0$", "$x^2 - 8x + 15 = 0$", "$x^2 + 2x + 15 = 0$"],
+      "answer": "$x^2 - 8x + 15 = 0$",
+      "id": "H322",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the term for a problem-solving technique where a large problem is broken down into smaller, recursive subproblems?",
+      "options": ["Iteration", "Greedy method", "Divide and Conquer", "Brute force"],
+      "answer": "Divide and Conquer",
+      "id": "H323",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "A sphere is perfectly inscribed within a cube of side length 2r. What is the ratio of the sphere's volume to the cube's volume?",
+      "options": ["$\\frac{\\pi}{4}$", "$\\frac{\\pi}{6}$", "$\\frac{4\\pi}{3}$", "$\\frac{1}{2}$"],
+      "answer": "$\\frac{\\pi}{6}$",
+      "id": "H324",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "The logical statement $P \\to Q$ (P implies Q) is equivalent to which of the following?",
+      "options": ["$\\neg P \\land Q$", "$P \\land \\neg Q$", "$\\neg P \\lor Q$", "$\\neg P \\lor \\neg Q$"],
+      "answer": "$\\neg P \\lor Q$",
+      "id": "H325",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "What number is the odd one out: 6, 12, 18, 24, 30, 37?",
+      "options": ["12", "24", "30", "37"],
+      "answer": "37",
+      "id": "H326",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "If you multiply me by any other number, the answer will always be me. What number am I?",
+      "options": ["0", "1", "10", "100"],
+      "answer": "0",
+      "id": "H327",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "The time period for a planet's orbit around the sun is proportional to the cube of the radius of its orbit. This is which of Kepler's Laws?",
+      "options": ["First Law", "Second Law", "Third Law", "Law of Universal Gravitation"],
+      "answer": "Third Law",
+      "id": "H328",
+      "level": "hard",
+      "topic": "Academics/Physics"
+    },
+    {
+      "question": "The **Euler-Mascheroni constant** (gamma, $\\gamma$) relates to which specific mathematical series?",
+      "options": ["Fibonacci series", "Taylor series", "Harmonic series", "Geometric series"],
+      "answer": "Harmonic series",
+      "id": "H329",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "If $f(x) = \\ln(x)$, what is the derivative of $f(x)$?",
+      "options": ["$x$", "$1/x$", "$e^x$", "$\\frac{\\ln(x)}{x}$"],
+      "answer": "$1/x$",
+      "id": "H330",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "The **Ring of Fire**, known for its volcanoes and earthquakes, borders which ocean?",
+      "options": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+      "answer": "Pacific Ocean",
+      "id": "H331",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "Which South American country is landlocked and shares a large part of the Andes mountains?",
+      "options": ["Peru", "Bolivia", "Chile", "Ecuador"],
+      "answer": "Bolivia",
+      "id": "H332",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What is the capital of Liechtenstein?",
+      "options": ["Vaduz", "Bern", "Vienna", "Luxembourg City"],
+      "answer": "Vaduz",
+      "id": "H333",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "The **Hadley Cell** is a global atmospheric circulation pattern dominant in which latitudinal region?",
+      "options": ["Polar regions", "Mid-latitudes", "Tropical regions", "High altitude"],
+      "answer": "Tropical regions",
+      "id": "H334",
+      "level": "hard",
+      "topic": "Earth/Atmosphere"
+    },
+    {
+      "question": "What is the name of the fault line that runs through California, separating the Pacific and North American tectonic plates?",
+      "options": ["New Madrid Fault", "East African Rift", "San Andreas Fault", "Cascadia Subduction Zone"],
+      "answer": "San Andreas Fault",
+      "id": "H335",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "Which of the following is an example of a wind-formed desert landform?",
+      "options": ["Moraine", "Oxbow lake", "Alluvial fan", "Dune"],
+      "answer": "Dune",
+      "id": "H336",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "The **Suez Canal** connects the Mediterranean Sea to which other body of water?",
+      "options": ["Black Sea", "Red Sea", "Arabian Sea", "Caspian Sea"],
+      "answer": "Red Sea",
+      "id": "H337",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "The process of **laterization** primarily occurs in which type of climate, leading to deep weathering and iron-rich soils?",
+      "options": ["Arid", "Temperate", "Arctic", "Tropical"],
+      "answer": "Tropical",
+      "id": "H338",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "Which mountain range separates the Iberian Peninsula from the rest of Europe?",
+      "options": ["Alps", "Pyrenees", "Apennines", "Carpathians"],
+      "answer": "Pyrenees",
+      "id": "H339",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What is the geological time period immediately preceding the Triassic Period?",
+      "options": ["Jurassic", "Permian", "Carboniferous", "Devonian"],
+      "answer": "Permian",
+      "id": "H340",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "The **Strait of Malacca** is a critical chokepoint connecting the Indian Ocean with which sea?",
+      "options": ["Arabian Sea", "South China Sea", "Red Sea", "Tasman Sea"],
+      "answer": "South China Sea",
+      "id": "H341",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "Which continent has the highest average elevation?",
+      "options": ["Asia", "Antarctica", "South America", "Africa"],
+      "answer": "Antarctica",
+      "id": "H342",
+      "level": "hard",
+      "topic": "Earth/Continents"
+    },
+    {
+      "question": "What type of rock is formed from the cooling and solidification of magma or lava?",
+      "options": ["Sedimentary", "Metamorphic", "Igneous", "Foliated"],
+      "answer": "Igneous",
+      "id": "H343",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "The **Tundra** biome is characterized by a permanently frozen layer beneath the soil surface, known as:",
+      "options": ["Laterite", "Loess", "Permafrost", "Regolith"],
+      "answer": "Permafrost",
+      "id": "H344",
+      "level": "hard",
+      "topic": "Earth/Ecology"
+    },
+    {
+      "question": "Which of the Great Lakes is entirely within the borders of the United States?",
+      "options": ["Lake Superior", "Lake Huron", "Lake Erie", "Lake Michigan"],
+      "answer": "Lake Michigan",
+      "id": "H345",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What is the scientific term for the total volume of water contained in a river's flow at a given time?",
+      "options": ["Infiltration", "Discharge", "Percolation", "Hydrograph"],
+      "answer": "Discharge",
+      "id": "H346",
+      "level": "hard",
+      "topic": "Earth/Hydrology"
+    },
+    {
+      "question": "The **Ural Mountains** traditionally separate which two continents?",
+      "options": ["Europe and Africa", "Asia and Australia", "Europe and Asia", "North and South America"],
+      "answer": "Europe and Asia",
+      "id": "H347",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "In which century did Alfred Wegener propose the theory of continental drift?",
+      "options": ["18th century", "19th century", "20th century", "21st century"],
+      "answer": "20th century",
+      "id": "H348",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "What is the capital of Vietnam?",
+      "options": ["Ho Chi Minh City", "Da Nang", "Hanoi", "Hue"],
+      "answer": "Hanoi",
+      "id": "H349",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "Which of the following is a key characteristic of the **Tropic of Capricorn**?",
+      "options": ["Marks the northern limit of the Tropics", "Marks the southernmost point where the sun can be directly overhead", "Is the longest line of latitude", "Is the boundary of the Southern Hemisphere"],
+      "answer": "Marks the southernmost point where the sun can be directly overhead",
+      "id": "H350",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "If you reorder the letters 'NAILITFOG', what three-letter word describes a characteristic of all things?",
+      "options": ["FAT", "OLD", "END", "GIN"],
+      "answer": "FAT",
+      "id": "H351",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "What is the missing number in the series: 1, 1, 2, 6, 24, 120, ?",
+      "options": ["360", "480", "720", "840"],
+      "answer": "720",
+      "id": "H352",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "What is the value of the expression $\\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + ...$ (the infinite geometric series)?",
+      "options": ["$1.5$", "$2$", "$1$", "Infinite"],
+      "answer": "$1$",
+      "id": "H353",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "Two people are born at the exact same moment but have different birth dates. How is this possible?",
+      "options": ["They are twins", "They are adopted", "They were born in different time zones", "It is impossible"],
+      "answer": "They were born in different time zones",
+      "id": "H354",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "If the probability of rain is $0.4$ and the probability of lightning is $0.2$, and the events are independent, what is the probability of both rain and lightning?",
+      "options": ["$0.6$", "$0.2$", "$0.08$", "$0.8$"],
+      "answer": "$0.08$",
+      "id": "H355",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "The average of five numbers is 10. If two numbers are removed, the new average is 15. What is the average of the two removed numbers?",
+      "options": ["0", "5", "7.5", "25"],
+      "answer": "2.5",
+      "id": "H356",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "What is the mathematical term for a line segment that connects two non-adjacent vertices of a polygon?",
+      "options": ["Side", "Perimeter", "Diagonal", "Altitude"],
+      "answer": "Diagonal",
+      "id": "H357",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "Which of the following does not belong: Red, Blue, Yellow, Purple, Green?",
+      "options": ["Red", "Blue", "Yellow", "Purple"],
+      "answer": "Purple",
+      "id": "H358",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "A merchant buys an item for $X$ and marks it up by $50\\%$. He then sells it at a $20\\%$ discount. What is his total profit percentage?",
+      "options": ["$30\\%$", "$25\\%$", "$20\\%$", "$50\\%$"],
+      "answer": "$20\\%$",
+      "id": "H359",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "What is the next number in the sequence: 1, 2, 4, 8, 16, 31, ?",
+      "options": ["32", "38", "57", "49"],
+      "answer": "57",
+      "id": "H360",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "A library contains only two types of books: fiction and non-fiction. There are 2,000 books in total. If the ratio of fiction to non-fiction is 3:5, how many non-fiction books are there?",
+      "options": ["750", "1000", "1250", "800"],
+      "answer": "1250",
+      "id": "H361",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "What is the mathematical constant defined as $\\frac{\\text{Circumference}}{\\text{Diameter}}$?",
+      "options": ["Euler's number ($e$)", "Pi ($\\pi$)", "Golden ratio ($\\phi$)", "Speed of light ($c$)"],
+      "answer": "Pi ($\\pi$)",
+      "id": "H362",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the term for a logical fallacy that assumes that because one event followed another, the first event caused the second?",
+      "options": ["Ad hominem", "Post hoc ergo propter hoc", "Red herring", "Begging the question"],
+      "answer": "Post hoc ergo propter hoc",
+      "id": "H363",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "If you drove a car 10 miles north and then 10 miles west, how far are you from your starting point (as the crow flies)?",
+      "options": ["10 miles", "$10\\sqrt{2}$ miles", "20 miles", "$\\sqrt{20}$ miles"],
+      "answer": "$10\\sqrt{2}$ miles",
+      "id": "H364",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "Which of the following is considered a transcendental number?",
+      "options": ["$\\sqrt{2}$", "$\\frac{1}{3}$", "$\\pi$", "$-5$"],
+      "answer": "$\\pi$",
+      "id": "H365",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the missing letter in the sequence: W, I, T, E, I, N, O, ?",
+      "options": ["T", "O", "S", "L"],
+      "answer": "W",
+      "id": "H366",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "If $x^2 + 2x - 15 = 0$, what is the sum of the roots of the equation?",
+      "options": ["$-2$", "$-15$", "$2$", "$15$"],
+      "answer": "$-2$",
+      "id": "H367",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "A man is twice as old as his son. Twenty years ago, he was four times as old as his son. What is the son's current age?",
+      "options": ["10", "20", "30", "40"],
+      "answer": "30",
+      "id": "H368",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "What is the term for a number that can be expressed as a ratio of two integers, $\\frac{p}{q}$, where $q \\ne 0$?",
+      "options": ["Irrational number", "Real number", "Integer", "Rational number"],
+      "answer": "Rational number",
+      "id": "H369",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the logical rule that states if 'If P, then Q' is true, and 'P' is true, then 'Q' must be true?",
+      "options": ["Modus Tollens", "Hypothetical Syllogism", "Disjunctive Syllogism", "Modus Ponens"],
+      "answer": "Modus Ponens",
+      "id": "H370",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "What is the name for the mathematical discipline that deals with the properties of numbers and their relationship to one another?",
+      "options": ["Algebra", "Geometry", "Number Theory", "Calculus"],
+      "answer": "Number Theory",
+      "id": "H371",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the volume of a cylinder with a radius of 2 units and a height of 3 units?",
+      "options": ["$6\\pi$ cubic units", "$12\\pi$ cubic units", "$18\\pi$ cubic units", "$24\\pi$ cubic units"],
+      "answer": "$12\\pi$ cubic units",
+      "id": "H372",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "A man is trapped in a room with two doors. One door leads to a fire, the other to an electric chair. He chooses one and survives. Why?",
+      "options": ["He was a fireman", "The fire was out", "The electric chair wasn't plugged in", "It was a riddle"],
+      "answer": "The fire was out",
+      "id": "H373",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "Which of the following shapes has exactly two lines of symmetry?",
+      "options": ["Equilateral triangle", "Square", "Rectangle", "Circle"],
+      "answer": "Rectangle",
+      "id": "H374",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "In coding, if 'APPLE' is written as '11616125' (position in alphabet), how would 'JUICE' be written?",
+      "options": ["1021935", "1021935", "1021935", "1021935"],
+      "answer": "1021935",
+      "id": "H375",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "A book has 100 pages. How many times does the digit '1' appear in the page numbers (1 to 100)?",
+      "options": ["10", "11", "20", "21"],
+      "answer": "21",
+      "id": "H376",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "What is the general term for a problem-solving approach that involves making the locally optimal choice at each stage with the hope of finding a global optimum?",
+      "options": ["Dynamic Programming", "Recursion", "Heuristic", "Greedy algorithm"],
+      "answer": "Greedy algorithm",
+      "id": "H377",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "If $\\log_2(x) = 4$, what is the value of $x$?",
+      "options": ["8", "16", "32", "64"],
+      "answer": "16",
+      "id": "H378",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "What is the missing number in the series: 1, 4, 27, 256, ?",
+      "options": ["625", "1024", "3125", "4096"],
+      "answer": "3125",
+      "id": "H379",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "In a group of 5 people, if everyone shakes hands with everyone else exactly once, how many handshakes take place?",
+      "options": ["5", "10", "15", "20"],
+      "answer": "10",
+      "id": "H380",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "Which layer of the Earth's interior is primarily composed of molten rock (magma)?",
+      "options": ["Crust", "Mantle", "Outer Core", "Inner Core"],
+      "answer": "Outer Core",
+      "id": "H381",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "The **Tibetan Plateau**, often called the 'Roof of the World', is located primarily in which country?",
+      "options": ["Nepal", "India", "China", "Bhutan"],
+      "answer": "China",
+      "id": "H382",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What is the most common mineral in the Earth's crust?",
+      "options": ["Calcite", "Feldspar", "Quartz", "Mica"],
+      "answer": "Feldspar",
+      "id": "H383",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "Which line of latitude marks the boundary of the region where the sun does not set for at least one day during the summer?",
+      "options": ["Equator", "Tropic of Cancer", "Arctic Circle", "Prime Meridian"],
+      "answer": "Arctic Circle",
+      "id": "H384",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What is the name of the supercontinent that existed before Pangaea?",
+      "options": ["Rodinia", "Gondwana", "Laurasia", "Columbia"],
+      "answer": "Rodinia",
+      "id": "H385",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "Which major river flows through London, England?",
+      "options": ["Seine River", "Rhine River", "Thames River", "Elbe River"],
+      "answer": "Thames River",
+      "id": "H386",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What is the largest island in the Mediterranean Sea?",
+      "options": ["Sardinia", "Crete", "Cyprus", "Sicily"],
+      "answer": "Sicily",
+      "id": "H387",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "The **jet stream** is a narrow, fast-flowing band of air found in the upper part of which atmospheric layer?",
+      "options": ["Troposphere", "Stratosphere", "Mesosphere", "Thermosphere"],
+      "answer": "Troposphere",
+      "id": "H388",
+      "level": "hard",
+      "topic": "Earth/Atmosphere"
+    },
+    {
+      "question": "What is the term for a circular coral reef that forms an island surrounding a lagoon?",
+      "options": ["Fringe reef", "Barrier reef", "Atoll", "Guyot"],
+      "answer": "Atoll",
+      "id": "H389",
+      "level": "hard",
+      "topic": "Earth/Oceanography"
+    },
+    {
+      "question": "Which country is the largest producer of natural rubber?",
+      "options": ["Indonesia", "Thailand", "Malaysia", "Vietnam"],
+      "answer": "Thailand",
+      "id": "H390",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "The **Salar de Uyuni**, the world's largest salt flat, is located in which country?",
+      "options": ["Argentina", "Chile", "Bolivia", "Peru"],
+      "answer": "Bolivia",
+      "id": "H391",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What is the name given to the mass of warm, salty water transported northwards by the Gulf Stream across the Atlantic?",
+      "options": ["Labrador Current", "North Atlantic Drift", "Canary Current", "Brazil Current"],
+      "answer": "North Atlantic Drift",
+      "id": "H392",
+      "level": "hard",
+      "topic": "Earth/Oceanography"
+    },
+    {
+      "question": "Which large peninsula is shared by Saudi Arabia, Yemen, Oman, and others?",
+      "options": ["Anatolian Peninsula", "Siberian Peninsula", "Arabian Peninsula", "Kerguelen Peninsula"],
+      "answer": "Arabian Peninsula",
+      "id": "H393",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What type of rock is **Gneiss**?",
+      "options": ["Sedimentary", "Intrusive igneous", "Metamorphic", "Extrusive igneous"],
+      "answer": "Metamorphic",
+      "id": "H394",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "The **Isthmus of Suez** connects which two continents?",
+      "options": ["North America and South America", "Asia and Africa", "Europe and Asia", "Africa and Europe"],
+      "answer": "Asia and Africa",
+      "id": "H395",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What is the term for a change in the frequency of a wave (sound or light) in relation to an observer who is moving relative to the wave source?",
+      "options": ["Refraction", "Diffraction", "Doppler Effect", "Huygens' Principle"],
+      "answer": "Doppler Effect",
+      "id": "H396",
+      "level": "hard",
+      "topic": "Academics/Physics"
+    },
+    {
+      "question": "If you are flying from the North Pole to the South Pole, how many continents will you cross?",
+      "options": ["5", "4", "3", "2"],
+      "answer": "3",
+      "id": "H397",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "Which of the following numbers is the smallest prime number greater than 100?",
+      "options": ["101", "103", "107", "109"],
+      "answer": "101",
+      "id": "H398",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "If $f(x) = x^3$, what is the second derivative $f''(x)$?",
+      "options": ["$3x^2$", "$6x$", "$x^2$", "$6$"],
+      "answer": "$6x$",
+      "id": "H399",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the missing number in the sequence: 7, 11, 13, 17, 19, 23, ?",
+      "options": ["27", "29", "31", "33"],
+      "answer": "29",
+      "id": "H400",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "The probability of hitting a target is $0.5$. If you fire 3 independent shots, what is the probability of hitting the target exactly once?",
+      "options": ["$0.125$", "$0.25$", "$0.375$", "$0.5$"],
+      "answer": "$0.375$",
+      "id": "H401",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "What is the smallest positive integer that is not a sum of distinct squares?",
+      "options": ["1", "2", "3", "4"],
+      "answer": "3",
+      "id": "H402",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "Which word is the odd one out: Circle, Trapezoid, Cube, Hexagon?",
+      "options": ["Circle", "Trapezoid", "Cube", "Hexagon"],
+      "answer": "Cube",
+      "id": "H403",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "If $A \\lor B$ (A or B) is true, and $B$ is false, what must be the truth value of $A$?",
+      "options": ["True", "False", "Undetermined", "Cannot be determined"],
+      "answer": "True",
+      "id": "H404",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "A gardener plants a tree. Every day, the tree's height doubles. If it takes 20 days to reach the top of the wall, on what day did it reach half the wall's height?",
+      "options": ["Day 10", "Day 15", "Day 19", "Day 1"],
+      "answer": "Day 19",
+      "id": "H405",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "If $\\sqrt{x + 1} = 3$, what is the value of $x^2$?",
+      "options": ["8", "9", "64", "81"],
+      "answer": "64",
+      "id": "H406",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "A certain number is divided by 5, then added to 10. The result is 15. What is the original number?",
+      "options": ["5", "10", "25", "30"],
+      "answer": "25",
+      "id": "H407",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "What is the name of the curve described by the equation $x^2 + y^2 = r^2$?",
+      "options": ["Parabola", "Ellipse", "Hyperbola", "Circle"],
+      "answer": "Circle",
+      "id": "H408",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "Find the missing number in the series: 1, 1, 2, 3, 5, 8, 13, ?",
+      "options": ["18", "21", "24", "27"],
+      "answer": "21",
+      "id": "H409",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "The total number of vertices in a pyramid with an octagonal base is:",
+      "options": ["8", "9", "10", "16"],
+      "answer": "9",
+      "id": "H410",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the next number in the sequence: 6, 2, 8, 4, 10, 6, ?",
+      "options": ["12", "14", "16", "18"],
+      "answer": "12",
+      "id": "H411",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "A car uses $\\frac{1}{4}$ of its fuel tank to travel 150 km. How far can it travel on a full tank?",
+      "options": ["450 km", "500 km", "600 km", "750 km"],
+      "answer": "600 km",
+      "id": "H412",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "Which of the following is not a property of a group in abstract algebra?",
+      "options": ["Closure", "Associativity", "Commutativity", "Inverse element"],
+      "answer": "Commutativity",
+      "id": "H413",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the logical fallacy of using a premise to support itself, leading to a circular argument?",
+      "options": ["Ad populum", "Begging the Question", "Straw Man", "Equivocation"],
+      "answer": "Begging the Question",
+      "id": "H414",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "If today is Tuesday, what day was the day after the day before yesterday?",
+      "options": ["Sunday", "Monday", "Tuesday", "Wednesday"],
+      "answer": "Monday",
+      "id": "H415",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "What is the value of $\\tan(45^\\circ)$?",
+      "options": ["0", "1", "$\\sqrt{3}$", "$\\frac{1}{\\sqrt{3}}$"],
+      "answer": "1",
+      "id": "H416",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "The concept of **entropy** in thermodynamics is a measure of a system's what?",
+      "options": ["Temperature", "Pressure", "Disorder", "Energy"],
+      "answer": "Disorder",
+      "id": "H417",
+      "level": "hard",
+      "topic": "Academics/Physics"
+    },
+    {
+      "question": "If a rectangle's length is twice its width, and its area is $50 cm^2$, what is its perimeter?",
+      "options": ["15 cm", "20 cm", "25 cm", "30 cm"],
+      "answer": "30 cm",
+      "id": "H418",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "The number of permutations of choosing 3 items from a set of 5 is:",
+      "options": ["10", "20", "60", "120"],
+      "answer": "60",
+      "id": "H419",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the next number in the sequence: 100, 96, 90, 82, 72, ?",
+      "options": ["60", "62", "58", "64"],
+      "answer": "60",
+      "id": "H420",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "The concept of 'qualia' is central to the philosophy of:",
+      "options": ["Ethics", "Epistemology", "Mind", "Logic"],
+      "answer": "Mind",
+      "id": "H421",
+      "level": "hard",
+      "topic": "Academics/Philosophy"
+    },
+    {
+      "question": "If 8 men can build a wall in 10 hours, how long will it take 4 men to build the same wall?",
+      "options": ["5 hours", "10 hours", "20 hours", "40 hours"],
+      "answer": "20 hours",
+      "id": "H422",
+      "level": "hard",
+      "topic": "Problem Solving"
+    },
+    {
+      "question": "Which of the following is not a primary color of light (additive mixing)?",
+      "options": ["Red", "Blue", "Yellow", "Green"],
+      "answer": "Yellow",
+      "id": "H423",
+      "level": "hard",
+      "topic": "Academics/Physics"
+    },
+    {
+      "question": "The logical statement $\\neg (P \\land Q)$ is equivalent to which of the following (De Morgan's Laws)?",
+      "options": ["$P \\land \\neg Q$", "$\\neg P \\lor \\neg Q$", "$\\neg P \\land \\neg Q$", "$\\neg (P \\lor Q)$"],
+      "answer": "$\\neg P \\lor \\neg Q$",
+      "id": "H424",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "A sequence is defined by $a_n = a_{n-1} + n$. If $a_1 = 1$, what is $a_4$?",
+      "options": ["6", "10", "15", "20"],
+      "answer": "10",
+      "id": "H425",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "What do the numbers 4, 6, 8, 9, 10, 12, 14, 15, 16, 18 all have in common?",
+      "options": ["They are prime", "They are multiples of 2", "They are composite numbers", "They are multiples of 3"],
+      "answer": "They are composite numbers",
+      "id": "H426",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "What is the area of a trapezoid with parallel sides of length 5 and 7, and a height of 4?",
+      "options": ["12", "18", "24", "36"],
+      "answer": "24",
+      "id": "H427",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "If 'WATER' is coded as '23120518' (reverse alphabet), how would 'FIRE' be coded?",
+      "options": ["211895", "211895", "211895", "211895"],
+      "answer": "211895",
+      "id": "H428",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "What is the name for the mathematical property of a curve that a sequence of tangents approaches its limit?",
+      "options": ["Continuity", "Differentiability", "Integrability", "Asymptote"],
+      "answer": "Differentiability",
+      "id": "H429",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "I have no voice, yet I can tell you all the secrets of the world. What am I?",
+      "options": ["A book", "A cloud", "A shadow", "A thought"],
+      "answer": "A book",
+      "id": "H430",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "What is the value of $1 + 2 + 3 + ... + 100$?",
+      "options": ["5000", "5050", "10000", "10100"],
+      "answer": "5050",
+      "id": "H431",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "What is the next number in the sequence: 1/2, 1/4, 1/8, 1/16, ?",
+      "options": ["1/20", "1/32", "1/40", "1/64"],
+      "answer": "1/32",
+      "id": "H432",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "Which of the following is an example of a scalar quantity in physics?",
+      "options": ["Velocity", "Force", "Mass", "Acceleration"],
+      "answer": "Mass",
+      "id": "H433",
+      "level": "hard",
+      "topic": "Academics/Physics"
+    },
+    {
+      "question": "If $x/5 = 15$, what is the value of $x - 5$?",
+      "options": ["3", "10", "70", "75"],
+      "answer": "70",
+      "id": "H434",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "A coin is tossed 4 times. What is the probability of getting exactly 2 heads?",
+      "options": ["$1/16$", "$1/8$", "$3/8$", "$1/2$"],
+      "answer": "$3/8$",
+      "id": "H435",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "Which geometric transformation does not change the size or shape of an object?",
+      "options": ["Dilation", "Shear", "Translation", "Projection"],
+      "answer": "Translation",
+      "id": "H436",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the missing word in the analogy: 'LION' is to 'ROAR' as 'DUCK' is to...?",
+      "options": ["Waddle", "Quack", "Swim", "Feather"],
+      "answer": "Quack",
+      "id": "H437",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "The total number of faces on a decahedron (a 10-sided polyhedron) is:",
+      "options": ["8", "10", "12", "20"],
+      "answer": "10",
+      "id": "H438",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "If you are flying a plane from the U.S. to Russia, where do you usually cross the International Date Line?",
+      "options": ["Atlantic Ocean", "Bering Strait", "Equator", "Prime Meridian"],
+      "answer": "Bering Strait",
+      "id": "H439",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What is the approximate speed of sound in dry air at $20^\\circ C$?",
+      "options": ["331 m/s", "343 m/s", "1500 m/s", "3.0 \\times 10^8 m/s"],
+      "answer": "343 m/s",
+      "id": "H440",
+      "level": "hard",
+      "topic": "Academics/Physics"
+    },
+    {
+      "question": "Find the missing number in the series: 4, 1, 9, 4, 16, 9, ?",
+      "options": ["20", "25", "30", "36"],
+      "answer": "25",
+      "id": "H441",
+      "level": "hard",
+      "topic": "IQ/Patterns"
+    },
+    {
+      "question": "A person has an equal number of brothers and sisters. Their sister has half as many brothers as sisters. How many children are in the family?",
+      "options": ["3 brothers, 3 sisters (6 total)", "2 brothers, 2 sisters (4 total)", "3 brothers, 4 sisters (7 total)", "4 brothers, 3 sisters (7 total)"],
+      "answer": "4 brothers, 3 sisters (7 total)",
+      "id": "H442",
+      "level": "hard",
+      "topic": "IQ/Riddles"
+    },
+    {
+      "question": "What is the name for the geological era that spans from the formation of the Earth to the start of the Cambrian Period?",
+      "options": ["Phanerozoic", "Mesozoic", "Precambrian", "Cenozoic"],
+      "answer": "Precambrian",
+      "id": "H443",
+      "level": "hard",
+      "topic": "Earth/Geology"
+    },
+    {
+      "question": "The **Bay of Fundy**, known for having the world's highest tides, is located between which two regions?",
+      "options": ["Newfoundland and Quebec", "Nova Scotia and New Brunswick", "New York and New Jersey", "Florida and Cuba"],
+      "answer": "Nova Scotia and New Brunswick",
+      "id": "H444",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "Which cloud type is most associated with hailstorms and severe weather?",
+      "options": ["Cirrostratus", "Altocumulus", "Cumulonimbus", "Stratocumulus"],
+      "answer": "Cumulonimbus",
+      "id": "H445",
+      "level": "hard",
+      "topic": "Earth/Atmosphere"
+    },
+    {
+      "question": "What is the correct mathematical name for the shape of a standard American football?",
+      "options": ["Oblate spheroid", "Prolate spheroid", "Ellipsoid", "Toroid"],
+      "answer": "Prolate spheroid",
+      "id": "H446",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "What is the only US state that borders only one other state?",
+      "options": ["Maine", "Hawaii", "Rhode Island", "Florida"],
+      "answer": "Maine",
+      "id": "H447",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "The logical argument 'All $A$ are $B$. All $B$ are $C$. Therefore, all $A$ are $C$.' is an example of a:",
+      "options": ["Inductive inference", "Categorical Syllogism", "Tautology", "Non-sequitur"],
+      "answer": "Categorical Syllogism",
+      "id": "H448",
+      "level": "hard",
+      "topic": "IQ/Logic"
+    },
+    {
+      "question": "If you start with $10,000$, and it grows at a simple interest rate of $10\\%$ per year, how much total interest will you have earned after 3 years?",
+      "options": ["$3000", "$3310", "$13000", "$13310$"],
+      "answer": "$3000",
+      "id": "H449",
+      "level": "hard",
+      "topic": "Problem Solving/Math"
+    },
+    {
+      "question": "What number is the smallest positive integer that is not a perfect power (i.e., not expressible as $a^b$ where $b > 1$)?",
+      "options": ["6", "7", "12", "18"],
+      "answer": "6",
+      "id": "H450",
+      "level": "hard",
+      "topic": "Academics/Math"
+    },
+    {
+      "question": "If the sun is directly overhead at $12$ PM in Greenwich, England ($0^\\circ$ longitude), what is the time at $90^\\circ$ West longitude?",
+      "options": ["$6$ AM", "$3$ PM", "$6$ PM", "$9$ AM"],
+      "answer": "$6$ AM",
+      "id": "H451",
+      "level": "hard",
+      "topic": "Geography"
+    },
+    {
+      "question": "What term refers to the process by which a star collapses under its own gravity, leading to a supernova or black hole?",
+      "options": ["Nuclear fusion", "Accretion", "Gravitational collapse", "Photoelectric effect"],
+      "answer": "Gravitational collapse",
+      "id": "H452",
+      "level": "hard",
+      "topic": "Academics/Physics"
     }
-]
+  ]
