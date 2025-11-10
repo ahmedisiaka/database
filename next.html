@@ -354,7 +354,7 @@ const firebaseConfig = {
                     topic: q.topic
                 }));
                 
-                showToast(`Loaded ${QUESTIONS.length} random questions from ${fileName} successfully!`, 'success');
+                showToast(`Loaded ${QUESTIONS.length} random questions successfully!`, 'success');
             } else {
                 throw new Error(`Invalid structure or empty question list in ${fileName}.`);
             }
