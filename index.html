@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Who Wants to Be a Millionaire?</title>
+<link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/8A2BE2/quiz.png">
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- FontAwesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<!-- Google Fonts for Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* Consistent background and typography */
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Consistent background */
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .header {
+    background-color: rgba(35, 14, 91, 0.8);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+  }
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #ffd700;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+  .container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 900px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .mode-button {
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .mode-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Custom Alert Modal Styles */
+  .modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 50;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  .modal-overlay.active {
+    opacity: 1; visibility: visible;
+  }
+  .modal-content {
+    background: #1f084a;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 400px;
+    text-align: center;
+    transform: scale(0.8);
+    transition: transform 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 3px solid #ffd700;
+  }
+  .modal-overlay.active .modal-content {
+    transform: scale(1);
+  }
+  .modal-content h3 {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .modal-content button {
+    background: #20e3b2;
+    color: #1f084a;
+    padding: 8px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 700;
+    transition: background-color 0.2s;
+  }
+  .modal-content button:hover {
+    background-color: #108dc7;
+    color: white;
+  }
+
+  /* Toast Styles */
+  #toast-container {
+    position: fixed; top: 20px; right: 20px; z-index: 2000;
+  }
+  .toast {
+    background-color: #333; color: white; padding: 10px 20px;
+    border-radius: 8px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0; transition: opacity 0.3s, transform 0.3s;
+    transform: translateX(100%);
+    min-width: 250px;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .toast.error { background-color: #e53e3e; }
+  .toast.success { background-color: #38a169; }
+  .toast.info { background-color: #3182ce; }
+
+  /* Leaderboard Styling */
+  #leaderboard h2 {
+    color: #20e3b2;
+    border-bottom: 2px solid rgba(32, 227, 178, 0.5);
+    padding-bottom: 5px;
+  }
+  .leaderboard-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid transparent;
+  }
+  .leaderboard-item:nth-child(2) { border-left-color: #ffd700; } /* Gold for Rank 1 */
+  .leaderboard-item:nth-child(3) { border-left-color: #c0c0c0; } /* Silver for Rank 2 */
+  .leaderboard-item:nth-child(4) { border-left-color: #cd7f32; } /* Bronze for Rank 3 */
+</style>
+
+<!-- Firebase CDN Imports -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+  import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+  import { getFirestore, collection, query, limit, getDocs, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+  // --- Global Variables (Mandatory Canvas/Firestore Setup) ---
+  const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDhlUjEjhI7ebTL8ZJtS9MEJ4UBmScKIt4",
+  authDomain: "elitescholars-db783.firebaseapp.com",
+  databaseURL: "https://elitescholars-db783-default-rtdb.firebaseio.com",
+  projectId: "elitescholars-db783",
+  storageBucket: "elitescholars-db783.firebasestorage.app",
+  messagingSenderId: "333113520307",
+  appId: "1:333113520307:web:1405ece5cabc81dc0980c6",
+  measurementId: "G-ZQLD6Z2MJB"
+};
+  const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+  // --- Firebase Initialization and Auth ---
+  let app;
+  let db;
+  let auth; 
+  let userId;
+  let isDbReady = false;
+
+  // DOM Elements
+  const playNormalBtn = document.getElementById('playNormal');
+  const playMoneyBtn = document.getElementById('playMoney');
+  const leaderboardBody = document.getElementById('leaderboardBody');
+  const loadingEl = document.getElementById('loading');
+  const customAlertModal = document.getElementById('customAlertModal');
+  const customAlertTitle = document.getElementById('customAlertTitle');
+  const customAlertMessage = document.getElementById('customAlertMessage');
+  const customAlertCloseBtn = document.getElementById('customAlertClose');
+
+  // Utility Functions
+  function showLoading() { loadingEl.classList.remove('hidden'); }
+  function hideLoading() { loadingEl.classList.add('hidden'); }
+  
+  function showToast(message, type = 'info') {
+    const toastContainer = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
+    toastContainer.appendChild(toast);
+    
+    setTimeout(() => { toast.classList.add('show'); }, 10);
+    setTimeout(() => { toast.classList.remove('show'); }, 3000);
+    setTimeout(() => { toast.remove(); }, 3300);
+  }
+
+  function showCustomAlert(message, title = 'Alert') {
+    customAlertTitle.textContent = title;
+    customAlertMessage.textContent = message;
+    customAlertModal.classList.add('active');
+  }
+
+  customAlertCloseBtn.addEventListener('click', () => {
+    customAlertModal.classList.remove('active');
+  });
+
+  async function firebaseInit() {
+    showLoading();
+    try {
+      app = initializeApp(firebaseConfig);
+      db = getFirestore(app);
+      auth = getAuth(app);
+      
+      if (initialAuthToken) {
+        await signInWithCustomToken(auth, initialAuthToken);
+        console.log("Signed in with custom token.");
+      } else {
+        await signInAnonymously(auth);
+        console.log("Signed in anonymously.");
+      }
+      
+      userId = auth.currentUser?.uid;
+      isDbReady = true;
+
+      // Ensure fetchLeaderboard is called only once auth is complete
+      await fetchLeaderboard();
+
+    } catch (error) {
+      console.error("Firebase init error:", error);
+      showToast(`Initialization failed: ${error.message}`, 'error');
+    } finally {
+      hideLoading();
+    }
+  }
+
+  // --- Firestore Data Functions ---
+
+  /**
+   * Fetches the top scores for the Millionaire challenge.
+   */
+  async function fetchLeaderboard() {
+    if (!isDbReady) {
+      console.log("Database not ready, skipping leaderboard fetch.");
+      return;
+    }
+    
+    leaderboardBody.innerHTML = '<p class="text-center py-4">Loading leaderboard...</p>';
+
+    try {
+      // The scores collection is assumed to be publicly visible for reading
+      const scoresCollection = collection(db, `artifacts/${appId}/public/data/scores`);
+      
+      // Query for the top 10 scores, ordering by score descending
+      // NOTE: We avoid using orderBy() for real-time applications to prevent index errors,
+      // but for a simple top-N list where we only sort by a single field, it's often acceptable.
+      // However, for maximum stability, we will fetch and sort in memory.
+      
+      const q = query(scoresCollection, limit(50)); // Fetch enough to find the top 10
+
+      const snapshot = await getDocs(q);
+      let scores = [];
+
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        // Assuming a standard score format (score and time taken for tie-breaking)
+        if (data.score !== undefined && data.score !== null) {
+            scores.push({ 
+                id: doc.id, 
+                score: data.score, 
+                timeTaken: data.timeTaken || 999999, // Use a large number for missing time
+                userName: data.userName || 'Anonymous Player'
+            });
+        }
+      });
+      
+      // Sort the scores: score descending, then time ascending
+      scores.sort((a, b) => {
+        if (b.score !== a.score) {
+          return b.score - a.score;
+        }
+        return a.timeTaken - b.timeTaken;
+      });
+      
+      const topTen = scores.slice(0, 10);
+      
+      if (topTen.length === 0) {
+        leaderboardBody.innerHTML = '<p class="text-center py-4 text-gray-400">No scores recorded yet. Be the first!</p>';
+        return;
+      }
+      
+      leaderboardBody.innerHTML = '';
+      topTen.forEach((scoreData, index) => {
+        const item = document.createElement('div');
+        item.className = 'leaderboard-item';
+        item.innerHTML = `
+          <div class="flex items-center">
+            <span class="font-bold text-xl w-8 text-left">${index + 1}.</span>
+            <span class="text-white ml-2">${scoreData.userName}</span>
+          </div>
+          <span class="font-bold text-lg text-yellow-400">${scoreData.score.toFixed(0)} Points</span>
+        `;
+        leaderboardBody.appendChild(item);
+      });
+
+    } catch (e) {
+      console.error("Error fetching leaderboard:", e);
+      leaderboardBody.innerHTML = '<p class="text-center py-4 text-red-400">Failed to load leaderboard data.</p>';
+    }
+  }
+
+
+  /**
+   * Loads questions (simulated) and starts the game.
+   * In a real application, this would fetch questions from Firestore or an external API.
+   */
+  async function loadQuestions(mode) {
+    showLoading();
+    // Simulate fetching questions (e.g., from a local file or collection)
+    // For this demonstration, we assume successful loading.
+    const questionsLoaded = true; // Replace with actual loading logic if needed
+
+    if (questionsLoaded) {
+      if (mode === 'realMoney') {
+        // --- IMPORTANT LOGIC CHANGE ---
+        // User is now allowed to participate without a code.
+        // The check for activation and the submission of name/code for prize claim
+        // MUST happen on the *results* page of the challenge (after the user finishes the game).
+        
+        showToast('Questions loaded. Compete for a prize!', 'success');
+        // Redirecting to challenge.html as a placeholder for the game page
+        setTimeout(() => { window.location.href = 'next.html?mode=realMoney'; }, 1000); 
+
+      } else { // Normal Mode
+        showToast('Normal Mode questions loaded. Redirecting to game...', 'success');
+        // Redirecting to challenge.html as a placeholder for the game page
+        setTimeout(() => { window.location.href = 'next.html?mode=normal'; }, 1000); 
+      }
+    } else {
+      showCustomAlert('Could not load questions. Check that "questions.json" exists and is valid.', 'Error Loading Data');
+    }
+  }
+  
+  // --- Event Listeners and Initial Setup ---
+  
+  // Event listeners for game mode buttons
+  playNormalBtn.addEventListener('click', () => loadQuestions('normal'));
+  playMoneyBtn.addEventListener('click', () => loadQuestions('realMoney'));
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    await firebaseInit();
+    
+    // Add network status listeners
+    window.addEventListener('online', () => {
+      showToast('You are back online.', 'info');
+      if (isDbReady) fetchLeaderboard();
+    });
+    window.addEventListener('offline', () => {
+      showToast('You are offline. Please check your internet connection.', 'error');
+      // No leaderboard update when offline
+    });
+  });
+</script>
+</head>
+<body>
+
+<!-- Custom Alert Modal -->
+<div id="customAlertModal" class="modal-overlay">
+  <div class="modal-content">
+    <h3 id="customAlertTitle">Alert</h3>
+    <p id="customAlertMessage">This is a custom alert message.</p>
+    <button id="customAlertClose">OK</button>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<!-- Loading Spinner -->
+<div id="loading" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-40">
+  <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400"></div>
+</div>
+
+<!-- Header -->
+<div class="header">
+  <h1 class="flex items-center">
+    <i class="fas fa-crown mr-3"></i>
+    Who Wants to Be a Millionaire?
+  </h1>
+</div>
+
+<!-- Main Container -->
+<div class="container">
+  
+  <section id="game-modes" class="mb-10 text-center">
+    <h2 class="text-2xl font-semibold mb-6 text-yellow-300">Choose Your Mode</h2>
+    <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8">
+      
+      <!-- Normal Mode Button -->
+      <button id="playNormal" class="mode-button bg-green-500 hover:bg-green-600 text-white flex items-center justify-center">
+        <i class="fas fa-graduation-cap mr-3"></i>
+        Normal CBT Mode
+      </button>
+      
+      <!-- Real Money Mode Button -->
+      <button id="playMoney" class="mode-button bg-red-600 hover:bg-red-700 text-white flex items-center justify-center">
+        <i class="fas fa-money-bill-wave mr-3"></i>
+        Compete for Real Prize!
+      </button>
+    </div>
+    <p class="text-sm mt-4 text-gray-300">Normal mode is for practice. Compete mode requires an activation code to claim any winnings.</p>
+  </section>
+
+  <hr class="border-t border-white border-opacity-20 my-6">
+
+  <!-- Leaderboard Section -->
+  <section id="leaderboard">
+    <h2 class="text-xl font-semibold mb-4 flex items-center justify-center"><i class="fas fa-trophy mr-2"></i> Top 10 High Scores</h2>
+    <div id="leaderboardBody">
+      <!-- Leaderboard items will be populated here by JavaScript -->
+      <p class="text-center py-4 text-gray-400">Loading leaderboard...</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

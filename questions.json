@@ -1,0 +1,283 @@
+[
+    {
+        "question": "Which Byzantine Emperor codified Roman law into the Corpus Juris Civilis, a monumental work completed in 534 AD?",
+        "options": ["Constantine the Great", "Theodosius II", "Justinian I", "Heraclius"],
+        "answer": "Justinian I",
+        "id": "H001",
+        "level": "hard",
+        "topic": "History"
+    },
+    {
+        "question": "What specific type of plastid is responsible for the long-term storage of starch (amylose and amylopectin) in plant cells?",
+        "options": ["Chromoplast", "Amyloplast", "Leucoplast", "Chloroplast"],
+        "answer": "Amyloplast",
+        "id": "H002",
+        "level": "hard",
+        "topic": "Nature/Biology"
+    },
+    {
+        "question": "In the study of fluid dynamics, the point where the effects of viscosity are negligible and flow can be described as incompressible and irrotational is called the what?",
+        "options": ["Stokes' Boundary", "Turbulent Layer", "Potential Flow", "Laminar Region"],
+        "answer": "Potential Flow",
+        "id": "H003",
+        "level": "hard",
+        "topic": "Academics/Physics"
+    },
+    {
+        "question": "The philosophical concept that reality fundamentally consists of two separate and distinct substances, mind and matter, is known as which of the following?",
+        "options": ["Monism", "Idealism", "Solipsism", "Dualism"],
+        "answer": "Dualism",
+        "id": "H004",
+        "level": "hard",
+        "topic": "Life/Philosophy"
+    },
+    {
+        "question": "Which Nobel Laureate wrote the 1929 novel *Look Homeward, Angel*, a highly autobiographical coming-of-age story?",
+        "options": ["William Faulkner", "Ernest Hemingway", "Thomas Wolfe", "John Steinbeck"],
+        "answer": "Thomas Wolfe",
+        "id": "H005",
+        "level": "hard",
+        "topic": "Biography/Academics"
+    },
+    {
+        "question": "What is the name of the effect where the pKa of a carboxylic acid is lowered by the presence of an electron-withdrawing group nearby?",
+        "options": ["Tautomerism", "Inductive Effect", "Hyperconjugation", "Steric Hindrance"],
+        "answer": "Inductive Effect",
+        "id": "H006",
+        "level": "hard",
+        "topic": "Academics/Chemistry"
+    },
+    {
+        "question": "The first permanent English settlement in North America, Jamestown (1607), was primarily located in the territory of which Native American confederacy?",
+        "options": ["Iroquois Confederacy", "Powhatan Confederacy", "Algonquin Tribes", "Cherokee Nation"],
+        "answer": "Powhatan Confederacy",
+        "id": "H007",
+        "level": "hard",
+        "topic": "History"
+    },
+    {
+        "question": "In computer science, what term describes a data structure that follows the Last-In, First-Out (LIFO) principle?",
+        "options": ["Queue", "Hash Table", "Stack", "Linked List"],
+        "answer": "Stack",
+        "id": "H008",
+        "level": "hard",
+        "topic": "School/Academics"
+    },
+    {
+        "question": "Which species of whale is known to have the largest brain, weighing up to 9 kilograms, and is famous for its massive, box-shaped head?",
+        "options": ["Blue Whale", "Humpback Whale", "Sperm Whale", "Fin Whale"],
+        "answer": "Sperm Whale",
+        "id": "H009",
+        "level": "hard",
+        "topic": "Nature"
+    },
+    {
+        "question": "The political philosophy of Niccolò Machiavelli is primarily outlined in which of his seminal works?",
+        "options": ["Discourses on Livy", "The Prince", "The Art of War", "Florentine Histories"],
+        "answer": "The Prince",
+        "id": "H010",
+        "level": "hard",
+        "topic": "Life/History"
+    },
+    {
+        "question": "If a triangle has side lengths of 5, 12, and 13, the inradius (radius of the inscribed circle) is what length?",
+        "options": ["2", "3", "2.5", "1"],
+        "answer": "2",
+        "id": "H011",
+        "level": "hard",
+        "topic": "Academics/Math"
+    },
+    {
+        "question": "Which 19th-century German pathologist is widely considered the founder of modern pathology and is credited with the famous aphorism: 'Omnis cellula e cellula' (all cells come from cells)?",
+        "options": ["Louis Pasteur", "Robert Koch", "Rudolf Virchow", "Gregor Mendel"],
+        "answer": "Rudolf Virchow",
+        "id": "H012",
+        "level": "hard",
+        "topic": "Biography/Academics"
+    },
+    {
+        "question": "What chemical compound is essential for the formation of the exoskeletons of arthropods, such as insects and crustaceans?",
+        "options": ["Cellulose", "Keratin", "Chitin", "Lignin"],
+        "answer": "Chitin",
+        "id": "H013",
+        "level": "hard",
+        "topic": "Nature/Biology"
+    },
+    {
+        "question": "The Treaty of Utrecht, signed in 1713, concluded which major European conflict?",
+        "options": ["The Thirty Years' War", "The War of the Spanish Succession", "The Seven Years' War", "The French and Indian War"],
+        "answer": "The War of the Spanish Succession",
+        "id": "H014",
+        "level": "hard",
+        "topic": "History"
+    },
+    {
+        "question": "In music theory, what is the term for a melodic phrase that is repeated at different pitch levels, often ascending or descending by step?",
+        "options": ["Ostinato", "Motif", "Sequence", "Cadence"],
+        "answer": "Sequence",
+        "id": "H015",
+        "level": "hard",
+        "topic": "School/Academics"
+    },
+    {
+        "question": "Which quantum phenomenon describes the probability that a particle will pass through a potential energy barrier, even if the particle's total energy is less than the barrier's height?",
+        "options": ["Quantum Entanglement", "Heisenberg Uncertainty", "Quantum Tunneling", "Wave-Particle Duality"],
+        "answer": "Quantum Tunneling",
+        "id": "H016",
+        "level": "hard",
+        "topic": "Academics/Physics"
+    },
+    {
+        "question": "Which Greek philosopher is credited with founding the Stoic school of philosophy in Athens?",
+        "options": ["Epicurus", "Zeno of Citium", "Diogenes of Sinope", "Heraclitus"],
+        "answer": "Zeno of Citium",
+        "id": "H017",
+        "level": "hard",
+        "topic": "History/Life"
+    },
+    {
+        "question": "The term *xylem* is derived from the Greek word for which material that it primarily transports in plants?",
+        "options": ["Sugar", "Sap", "Wood", "Water"],
+        "answer": "Wood",
+        "id": "H018",
+        "level": "hard",
+        "topic": "Nature/Biology"
+    },
+    {
+        "question": "Who was the Soviet scientist famous for his work on the theory of the chemical structure of organic compounds, particularly aromatic systems?",
+        "options": ["Dmitri Mendeleev", "Alexander Butlerov", "Nikolay Semyonov", "Ivan Pavlov"],
+        "answer": "Alexander Butlerov",
+        "id": "H019",
+        "level": "hard",
+        "topic": "Biography/Chemistry"
+    },
+    {
+        "question": "What is the common name for the geological fault line that runs through California and is responsible for many of the region's major earthquakes?",
+        "options": ["Hayward Fault", "New Madrid Fault", "San Andreas Fault", "Cascadia Subduction Zone"],
+        "answer": "San Andreas Fault",
+        "id": "H020",
+        "level": "hard",
+        "topic": "Nature"
+    },
+    {
+        "question": "The literary device of using an object or idea to represent a completely different idea, usually abstract, is known as what?",
+        "options": ["Metaphor", "Allegory", "Synecdoche", "Symbolism"],
+        "answer": "Symbolism",
+        "id": "H021",
+        "level": "hard",
+        "topic": "School/Academics"
+    },
+    {
+        "question": "In economics, the condition where the government's spending exceeds its revenue over a specified period is called a what?",
+        "options": ["Trade Deficit", "National Debt", "Budget Deficit", "Fiscal Surplus"],
+        "answer": "Budget Deficit",
+        "id": "H022",
+        "level": "hard",
+        "topic": "Academics"
+    },
+    {
+        "question": "Who composed the opera *The Marriage of Figaro*, first performed in Vienna in 1786?",
+        "options": ["Ludwig van Beethoven", "Franz Schubert", "Wolfgang Amadeus Mozart", "Joseph Haydn"],
+        "answer": "Wolfgang Amadeus Mozart",
+        "id": "H023",
+        "level": "hard",
+        "topic": "Academics/Biography"
+    },
+    {
+        "question": "The ancient Greek city of Byzantium was renamed Constantinople in 330 AD by which Roman Emperor?",
+        "options": ["Diocletian", "Augustus", "Constantine I", "Theodosius I"],
+        "answer": "Constantine I",
+        "id": "H024",
+        "level": "hard",
+        "topic": "History"
+    },
+    {
+        "question": "Which hormone is primarily responsible for regulating the body's sleep-wake cycles (circadian rhythm)?",
+        "options": ["Adrenaline", "Insulin", "Melatonin", "Thyroxine"],
+        "answer": "Melatonin",
+        "id": "H025",
+        "level": "hard",
+        "topic": "Life/Nature"
+    },
+    {
+        "question": "What is the specialized name for the layer of the Earth's atmosphere that contains the ozone layer?",
+        "options": ["Troposphere", "Stratosphere", "Mesosphere", "Thermosphere"],
+        "answer": "Stratosphere",
+        "id": "H026",
+        "level": "hard",
+        "topic": "Nature"
+    },
+    {
+        "question": "In mathematics, a function that is equal to its own derivative is an exponential function of the form $f(x) = ce^x$. What is $c$?",
+        "options": ["The integration constant", "The initial value", "The Euler's number", "The slope"],
+        "answer": "The initial value",
+        "id": "H027",
+        "level": "hard",
+        "topic": "Academics/Math"
+    },
+    {
+        "question": "Which Renaissance humanist and author wrote *The Praise of Folly*, a satirical attack on corrupt practices of the Catholic Church and European society?",
+        "options": ["Thomas More", "Desiderius Erasmus", "Michel de Montaigne", "Giovanni Boccaccio"],
+        "answer": "Desiderius Erasmus",
+        "id": "H028",
+        "level": "hard",
+        "topic": "Biography/History"
+    },
+    {
+        "question": "What term describes the process where a solid converts directly into a gas without passing through the liquid phase?",
+        "options": ["Deposition", "Sublimation", "Vaporization", "Condensation"],
+        "answer": "Sublimation",
+        "id": "H029",
+        "level": "hard",
+        "topic": "Academics/Chemistry"
+    },
+    
+        {
+          "question": "Which is the **only continent** that has land in all four of the Earth's hemispheres (Northern, Southern, Eastern, and Western)?",
+          "options": ["Asia", "Africa", "North America", "Antarctica"],
+          "answer": "Africa",
+          "id": "H028",
+          "level": "hard",
+          "topic": "Academics/Geography"
+        },
+        {
+          "question": "The vast majority of the landmass known as Oceania sits on one tectonic plate. Which is the **only major continent** that does not have a single active volcano on its mainland?",
+          "options": ["South America", "Australia", "Europe", "North America"],
+          "answer": "Australia",
+          "id": "H029",
+          "level": "hard",
+          "topic": "Academics/Geography"
+        },
+        {
+          "question": "Which continent holds the record for the largest contiguous landmass that strictly adheres to **zero time zone diversity**, meaning the entire continent uses one single official time?",
+          "options": ["Africa", "Antarctica", "North America", "Europe"],
+          "answer": "Antarctica",
+          "id": "H030",
+          "level": "hard",
+          "topic": "Academics/Geography"
+        },
+        {
+          "question": "Which of the six inhabited continents has its **highest elevation** (Mount Everest) and its **lowest terrestrial elevation** (the shore of the Dead Sea) within its boundaries?",
+          "options": ["Africa", "Asia", "North America", "South America"],
+          "answer": "Asia",
+          "id": "H031",
+          "level": "hard",
+          "topic": "Academics/Geography"
+        },
+        {
+          "question": "The Continental Divide of the Americas separates water flow to the Pacific from the Atlantic/Arctic. Which continent is **NOT crossed** by this major hydrological feature?",
+          "options": ["North America", "South America", "Africa", "Asia"],
+          "answer": "Africa",
+          "id": "H032",
+          "level": "hard",
+          "topic": "Academics/Geography"
+        },
+    {
+        "question": "Which West African empire, flourishing between the 7th and 13th centuries, controlled trans-Saharan trade routes, primarily trading gold and salt?",
+        "options": ["Mali Empire", "Songhai Empire", "Ghana Empire", "Kanem-Bornu Empire"],
+        "answer": "Ghana Empire",
+        "id": "H030",
+        "level": "hard",
+        "topic": "History"
+    }
+]

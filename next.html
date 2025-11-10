@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Millionaire Challenge | The Quiz</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/ffd700/quiz.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Millionaire Theme Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1f084a 0%, #0c0429 100%); /* Deep purple/blue gradient */
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .game-container {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 3fr 1fr; /* Main game area and money tree */
+            gap: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .game-container {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+            }
+        }
+
+        .main-quiz-area {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 2px solid #ffd700;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .answer-option {
+            background-color: #2e0d63; /* Dark purple */
+            border: 2px solid #572a9b;
+            color: #fff;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .answer-option:hover {
+            background-color: #4a1f9e; /* Lighter purple on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* State colors */
+        .answer-option.correct {
+            background-color: #28a745; /* Green */
+            border-color: #1e7e34;
+            pointer-events: none;
+        }
+        .answer-option.incorrect {
+            background-color: #dc3545; /* Red */
+            border-color: #c82333;
+            pointer-events: none;
+        }
+        .answer-option.selected {
+            background-color: #ffd700; /* Gold */
+            color: #1f084a;
+            border-color: #ccac00;
+        }
+        .answer-option.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* Money Tree Styles */
+        .money-tree-item {
+            padding: 8px 15px;
+            margin-bottom: 4px;
+            border-radius: 6px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            transition: background-color 0.3s;
+        }
+        .money-tree-item.safety {
+            background-color: rgba(32, 227, 178, 0.2); /* Teal safety line */
+            color: #20e3b2;
+            border: 1px solid #20e3b2;
+        }
+        .money-tree-item.current {
+            background: #ffd700; /* Gold for current question */
+            color: #1f084a;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+        .money-tree-item.unreached {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #aaa;
+        }
+        .money-tree-item.reached {
+            background-color: rgba(32, 227, 178, 0.1);
+            color: #20e3b2;
+        }
+        
+        .lifeline-btn {
+            transition: transform 0.1s;
+        }
+        .lifeline-btn:hover:not(:disabled) {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(32, 227, 178, 0.5);
+        }
+
+        /* Timer Bar */
+        #timerBar {
+            height: 10px;
+            background-color: #dc3545; /* Red for urgency */
+            width: 100%;
+            border-radius: 5px;
+            transition: width 0.5s linear;
+        }
+        /* Custom modal styles */
+        #decisionModal.active { opacity: 1; pointer-events: auto; }
+        #decisionModal.active .modal-content { transform: scale(1); }
+        #customAlertModal.active { opacity: 1; pointer-events: auto; }
+        #customAlertModal.active .modal-content { transform: scale(1); }
+    </style>
+</head>
+<body>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, collection, doc, setDoc, getDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    
+    // --- Global Variables (Mandatory Canvas/Firestore Setup) ---
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDhlUjEjhI7ebTL8ZJtS9MEJ4UBmScKIt4",
+  authDomain: "elitescholars-db783.firebaseapp.com",
+  databaseURL: "https://elitescholars-db783-default-rtdb.firebaseio.com",
+  projectId: "elitescholars-db783",
+  storageBucket: "elitescholars-db783.firebasestorage.app",
+  messagingSenderId: "333113520307",
+  appId: "1:333113520307:web:1405ece5cabc81dc0980c6",
+  measurementId: "G-ZQLD6Z2MJB"
+};
+    const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+    // --- Firebase Initialization and Auth ---
+    let app;
+    let db;
+    let auth; 
+    let userId;
+    let isDbReady = false;
+
+    // Firestore Paths
+    const ACTIVATION_CODE_PATH = (code) => `users/${code}`;
+    const SCORES_COLLECTION_PATH = `artifacts/${appId}/public/data/scores`;
+    
+    // --- Utility Functions ---
+    const loadingEl = document.getElementById('loading');
+    const customAlertModal = document.getElementById('customAlertModal');
+    const customAlertTitle = document.getElementById('customAlertTitle');
+    const customAlertMessage = document.getElementById('customAlertMessage');
+    const customAlertCloseBtn = document.getElementById('customAlertClose');
+    const timerBarEl = document.getElementById('timerBar');
+
+    function showLoading() { loadingEl.classList.remove('hidden'); }
+    function hideLoading() { loadingEl.classList.add('hidden'); }
+    
+    function showToast(message, type = 'info') {
+        const toastContainer = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = `toast fixed top-5 right-5 z-50 p-4 rounded-lg shadow-xl text-white transition-all transform duration-300 ${type === 'error' ? 'bg-red-600' : type === 'success' ? 'bg-green-600' : 'bg-blue-600'}`;
+        toast.textContent = message;
+        toastContainer.appendChild(toast);
+        
+        setTimeout(() => { toast.classList.add('translate-y-0'); toast.classList.add('opacity-100'); }, 10);
+        setTimeout(() => { toast.classList.remove('opacity-100'); toast.classList.add('opacity-0'); }, 3000);
+        setTimeout(() => { toast.remove(); }, 3300);
+    }
+
+    function showCustomAlert(message, title = 'Alert', callback = () => {}) {
+        customAlertTitle.textContent = title;
+        customAlertMessage.textContent = message;
+        customAlertModal.classList.add('active');
+        customAlertCloseBtn.onclick = () => {
+            customAlertModal.classList.remove('active');
+            callback();
+        };
+    }
+    
+    // NEW: General purpose decision modal for Walk-Away prompt
+    function showDecisionModal(title, message, option1Text, option1Callback, option2Text, option2Callback) {
+        const modal = document.getElementById('decisionModal');
+        // Safety check in case modal HTML is missing
+        if (!modal) return setTimeout(renderQuestion, 500); 
+
+        document.getElementById('decisionModalTitle').textContent = title;
+        document.getElementById('decisionModalMessage').textContent = message;
+        
+        const btn1 = document.getElementById('decisionBtn1');
+        const btn2 = document.getElementById('decisionBtn2');
+
+        btn1.textContent = option1Text;
+        btn2.textContent = option2Text;
+
+        // Reset and set new handlers
+        btn1.onclick = () => { modal.classList.remove('active'); option1Callback(); };
+        btn2.onclick = () => { modal.classList.remove('active'); option2Callback(); };
+
+        modal.classList.add('active');
+    }
+
+    // --- Game Data ---
+    let QUESTIONS = [];
+    // CRITICAL FIX: Updated placeholder answers to be INDEX NUMBERS (0-based) for consistency with map logic
+    const PLACEHOLDER_QUESTIONS = [
+        { q: "Which planet is known as the 'Red Planet'?", a: 1, options: ["Jupiter", "Mars", "Venus", "Saturn"] },
+        { q: "What is the capital city of Australia?", a: 2, options: ["Sydney", "Melbourne", "Canberra", "Perth"] },
+        { q: "What is the chemical symbol for gold?", a: 1, options: ["Ag", "Au", "Fe", "Pb"] },
+        { q: "Who wrote the play 'Romeo and Juliet'?", a: 1, options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"] },
+        { q: "What is the largest organ in the human body?", a: 2, options: ["Heart", "Liver", "Skin", "Brain"] }
+    ];
+    
+    // --- UPDATED LOGIC FOR UNLIMITED QUESTIONS AND DYNAMIC PRIZE ---
+    const MAX_QUESTIONS_TO_LOAD = 1000; // Increase this to simulate "unlimited" based on loaded file size
+    
+    /**
+     * Calculates the prize money for a given question index (0-based).
+     * Prize is ₦2 per question: (index + 1) * 2
+     */
+    function calculatePrize(index) {
+        return (index + 1) * 2;
+    }
+    // SAFETY_LINES and MONEY_TREE are removed. Safety is now dynamic on multiples of ₦100.
+    // --- END UPDATED LOGIC ---
+
+    // --- Game State Variables ---
+    let gameMode = 'normal'; // default
+    let currentQuestionIndex = 0;
+    let winnings = 0; // The amount secured from the last correctly answered question
+    let currentPrize = 0;
+    let isGameRunning = false;
+    let startTime;
+    let questionTimer; // ID for setTimeout/setInterval
+    const QUESTION_TIME_SECONDS = 5; // 5 seconds per question
+
+    let lifeLines = {
+        'fiftyFifty': true, // Removes two incorrect answers
+        'askExpert': true,  // Provides a hint (simulated)
+    };
+    
+    let userData = {
+        displayName: 'Anonymous',
+        activationCode: null,
+        phoneNumber: null, // ADDED: Phone number for card submission
+    };
+
+    // --- DOM Elements ---
+    const quizAreaEl = document.getElementById('mainQuizArea');
+    const preGameFormEl = document.getElementById('preGameForm');
+    const questionTextEl = document.getElementById('questionText');
+    const optionsContainer = document.getElementById('optionsContainer');
+    const moneyTreeEl = document.getElementById('moneyTree');
+    const gameResultModal = document.getElementById('gameResultModal');
+    const modalTitleEl = document.getElementById('modalTitle');
+    const modalWinningsEl = document.getElementById('modalWinnings');
+    const modalMessageEl = document.getElementById('modalMessage');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    
+    // --- Core Game Functions ---
+
+    function parseURLParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        gameMode = urlParams.get('mode') || 'normal';
+    }
+
+    async function firebaseInit() {
+        showLoading();
+        try {
+            app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            auth = getAuth(app);
+            
+            if (initialAuthToken) {
+                await signInWithCustomToken(auth, initialAuthToken);
+            } else {
+                await signInAnonymously(auth);
+            }
+            
+            userId = auth.currentUser?.uid || crypto.randomUUID();
+            isDbReady = true;
+
+        } catch (error) {
+            console.error("Firebase init error:", error);
+            showToast(`Initialization failed: ${error.message}`, 'error');
+        } finally {
+            // Keep loading visible until questions are loaded
+        }
+    }
+
+    async function fetchQuestions() {
+        showLoading();
+        // FIXED/CONFIRMED: normal.json for normal mode, questions.json for realMoney mode
+        const fileName = gameMode === 'realMoney' ? 'normal.json' : 'questions.json'; 
+        try {
+            const response = await fetch(fileName);
+            if (!response.ok) {
+                // Throw an error with the HTTP status for better debugging
+                throw new Error(`Failed to fetch ${fileName}. Status: ${response.status} (${response.statusText})`);
+            }
+            const data = await response.json();
+
+            // 2. Robust Validation 
+            const isValid = Array.isArray(data) && data.length > 0 && data.every(q => 
+                q.question && 
+                (typeof q.answer === 'number' || typeof q.answer === 'string') && 
+                Array.isArray(q.options) && 
+                q.options.length > 0
+            );
+
+            if (isValid) {
+                // 3. SHUFFLE the array randomly 
+                const shuffledData = data.sort(() => Math.random() - 0.5);
+
+                // 4. SLICE to take the required number of questions (using a large limit for "unlimited")
+                const selectedQuestions = shuffledData.slice(0, MAX_QUESTIONS_TO_LOAD); 
+                
+                // 5. MAP and FORMAT to use the old key names ('q', 'a') and ensure 'a' is a number
+                QUESTIONS = selectedQuestions.map(q => ({
+                    q: q.question,      
+                    // CRITICAL: Ensure 'a' is a number (the index)
+                    // Checks if 'answer' is a string (the correct answer text) or a number (the index).
+                    a: typeof q.answer === 'string' ? q.options.indexOf(q.answer) : parseInt(q.answer, 10), 
+                    options: q.options, 
+                    id: q.id,
+                    level: q.level,
+                    topic: q.topic
+                }));
+                
+                showToast(`Loaded ${QUESTIONS.length} random questions from ${fileName} successfully!`, 'success');
+            } else {
+                throw new Error(`Invalid structure or empty question list in ${fileName}.`);
+            }
+        } catch (error) {
+            console.error(`Error loading questions from ${fileName}:`, error);
+            showToast(`Error loading questions from ${fileName}. Falling back to built-in questions.`, 'error');
+            
+            // CRITICAL: Ensure placeholder structure is used when falling back
+            QUESTIONS = PLACEHOLDER_QUESTIONS.map((q, index) => ({
+                ...q,
+                a: q.a, 
+                q: q.q,
+                options: q.options
+            }));
+        } finally {
+            hideLoading();
+        }
+    }
+
+
+    function initGame() {
+        parseURLParams();
+        
+        if (gameMode === 'realMoney') {
+            preGameFormEl.classList.remove('hidden');
+            quizAreaEl.classList.add('hidden');
+            document.getElementById('modeDisplay').textContent = 'Real Money Mode (Prize Eligible)';
+        } else {
+            document.getElementById('modeDisplay').textContent = 'Normal Mode (Not Prize Eligible)';
+            preGameFormEl.classList.add('hidden');
+            quizAreaEl.classList.remove('hidden');
+            startGame();
+        }
+    }
+
+    function startGame() {
+        isGameRunning = true;
+        startTime = Date.now();
+        currentQuestionIndex = 0;
+        winnings = 0;
+        currentPrize = 0;
+        renderQuestion();
+        renderMoneyTree();
+    }
+    
+    /**
+     * Starts the 5-second countdown timer for the current question.
+     */
+    function startTimer() {
+        clearTimeout(questionTimer);
+        let timeLeft = QUESTION_TIME_SECONDS;
+        
+        const updateTimerDisplay = () => {
+            const percentage = (timeLeft / QUESTION_TIME_SECONDS) * 100;
+            timerBarEl.style.width = `${percentage}%`;
+            
+            if (timeLeft <= 0) {
+                timeOut();
+            } else {
+                timeLeft--;
+                questionTimer = setTimeout(updateTimerDisplay, 1000);
+            }
+        };
+
+        updateTimerDisplay(); // Initial call
+    }
+
+    function stopTimer() {
+        clearTimeout(questionTimer);
+        timerBarEl.style.width = '100%'; // Reset bar visually
+    }
+
+    function timeOut() {
+        if (!isGameRunning) return;
+        showToast('Time ran out! Game Over.', 'error');
+        
+        // Visually mark the correct answer
+        Array.from(optionsContainer.children).forEach(btn => btn.classList.add('disabled'));
+        const qData = QUESTIONS[currentQuestionIndex];
+        const correctAnswer = qData.a; // Should be the index (0-3)
+        const correctButton = Array.from(optionsContainer.children)[correctAnswer];
+        if(correctButton) correctButton.classList.add('correct');
+
+        endGame(false);
+    }
+    
+    /**
+     * Renders the current question and its options.
+     */
+    function renderQuestion() {
+        stopTimer(); 
+        
+        if (currentQuestionIndex >= QUESTIONS.length) {
+            return endGame(true);
+        }
+
+        const qData = QUESTIONS[currentQuestionIndex];
+        questionTextEl.innerHTML = `<span class="text-yellow-400 font-bold mr-2">Q${currentQuestionIndex + 1}:</span> ${qData.q}`;
+        optionsContainer.innerHTML = '';
+
+        qData.options.forEach((option, index) => {
+            const btn = document.createElement('button');
+            const letter = String.fromCharCode(65 + index); // A, B, C, D
+            btn.className = 'answer-option w-full text-left';
+            btn.innerHTML = `<span class="text-yellow-400 mr-3">${letter}:</span> ${option}`;
+            // CRITICAL FIX: Pass the numerical index (0-3) for comparison
+            btn.addEventListener('click', () => selectAnswer(btn, index)); 
+            optionsContainer.appendChild(btn);
+        });
+        
+        updateProgress();
+        startTimer(); 
+    }
+    
+    /**
+     * Prompts the user to continue playing or walk away with their current winnings.
+     * Triggered only at safety lines (which are now multiples of ₦100).
+     */
+    function promptForContinue() {
+        if (currentQuestionIndex >= QUESTIONS.length) {
+            return endGame(true); 
+        }
+        
+        // Check if the current secured winnings are a multiple of ₦100 (and > 0)
+        // Winnings is the amount secured from the *last* correctly answered question.
+        const currentPrizeAmount = winnings; 
+        const isWalkAwayPoint = (currentPrizeAmount % 100 === 0 && currentPrizeAmount > 0);
+        
+        // If it's the last loaded question, just end the game
+        if (currentQuestionIndex >= QUESTIONS.length && !isWalkAwayPoint) {
+             return endGame(true);
+        }
+
+        if (gameMode !== 'realMoney' || !isWalkAwayPoint) {
+            // Auto-continue if not Real Money Mode OR not at a ₦100 safety level
+            return setTimeout(renderQuestion, 500); 
+        }
+
+        const nextPrizeAmount = calculatePrize(currentQuestionIndex);
+        const questionNumber = currentQuestionIndex; 
+
+        if (questionNumber < QUESTIONS.length) { 
+            stopTimer(); 
+            
+            showDecisionModal(
+                'Continue the Challenge?',
+                `You have secured ₦${currentPrizeAmount.toLocaleString()}. The next question (Q${questionNumber + 1}) is worth ₦${nextPrizeAmount.toLocaleString()}. Do you want to continue and risk your winnings, or walk away and keep the ₦${currentPrizeAmount.toLocaleString()}?`,
+                'Walk Away (Keep Winnings)',
+                () => { 
+                    endGame(false, true); // True to indicate walk away
+                },
+                'Continue (Risk Winnings)',
+                () => {
+                     startTimer(); 
+                     renderQuestion();
+                }
+            );
+            return; 
+        }
+        
+        // Safety fallback:
+        setTimeout(renderQuestion, 500);
+    }
+    
+    // Handles the user selecting an answer.
+    function selectAnswer(selectedButton, selectedIndex) {
+        if (!isGameRunning) return;
+        stopTimer(); 
+
+        // selectedIndex is the numerical index (0-3) passed from renderQuestion
+        const userSelectedNumber = selectedIndex; 
+
+        // Disable all options
+        Array.from(optionsContainer.children).forEach(btn => btn.classList.add('disabled'));
+
+        const qData = QUESTIONS[currentQuestionIndex];
+        const correctAnswer = qData.a; // This is the numerical index (0, 1, 2, or 3)
+        selectedButton.classList.add('selected');
+
+        setTimeout(() => {
+            if (userSelectedNumber === correctAnswer) { 
+                // Correct Answer!
+                selectedButton.classList.add('correct');
+                showToast('Correct! Moving up the money tree.', 'success');
+                
+                // Update winnings dynamically
+                currentPrize = calculatePrize(currentQuestionIndex);
+                winnings = currentPrize;
+
+                currentQuestionIndex++;
+                
+                if (currentQuestionIndex < QUESTIONS.length) {
+                    promptForContinue(); // Check for Walk-Away prompt
+                } else {
+                    endGame(true); 
+                }
+            } else {
+                // Incorrect Answer
+                selectedButton.classList.add('incorrect');
+                
+                // Highlight the correct answer button
+                const correctButton = Array.from(optionsContainer.children)[correctAnswer];
+                if (correctButton) correctButton.classList.add('correct');
+
+                // Find the correct answer TEXT for the toast message
+                const correctAnswerText = qData.options[correctAnswer]; 
+                showToast(`Incorrect! The correct answer was ${correctAnswerText}.`, 'error');
+                endGame(false);
+            }
+        }, 1500);
+    }
+    /**
+     * Handles life-line usage (50:50 and Ask the Expert).
+     */
+    function useLifeLine(type) {
+        if (!isGameRunning || !lifeLines[type]) return;
+
+        lifeLines[type] = false;
+        const btnEl = document.getElementById(`lifeline${type === 'fiftyFifty' ? '5050' : 'Expert'}`);
+        btnEl.disabled = true;
+        btnEl.classList.remove('bg-teal-500', 'hover:bg-teal-600');
+        btnEl.classList.add('bg-gray-700');
+
+        const qData = QUESTIONS[currentQuestionIndex];
+        const correctAnswerIndex = qData.a;
+        
+        if (type === 'fiftyFifty') {
+            const allOptions = Array.from(optionsContainer.children);
+            const incorrectIndices = [0, 1, 2, 3].filter(i => i !== correctAnswerIndex);
+            
+            // Randomly select 2 incorrect options to remove
+            const indicesToRemove = incorrectIndices.sort(() => 0.5 - Math.random()).slice(0, 2);
+            
+            indicesToRemove.forEach(index => {
+                const btn = allOptions[index];
+                if (btn && !btn.classList.contains('disabled')) {
+                    btn.classList.add('disabled');
+                    // Retain the letter, just replace the option text
+                    const letter = String.fromCharCode(65 + index);
+                    btn.innerHTML = `<span class="text-yellow-400 mr-3">${letter}:</span> [REMOVED]`;
+                }
+            });
+            showToast("50:50 used! Two incorrect answers have been removed.", 'info');
+
+        } else if (type === 'askExpert') {
+            const hintIsCorrect = Math.random() < 0.7;
+            let expertAdvice;
+            
+            if (hintIsCorrect) {
+                expertAdvice = qData.options[correctAnswerIndex]; // Correct answer text
+            } else {
+                // Pick a random incorrect answer text
+                const incorrectOptions = qData.options.filter((_, index) => index !== correctAnswerIndex);
+                expertAdvice = incorrectOptions[Math.floor(Math.random() * incorrectOptions.length)];
+            }
+            
+            showCustomAlert(`The expert suggests: ${expertAdvice}`, 'Expert Advice');
+        }
+    }
+
+
+    /**
+     * Updates the money tree progress bar dynamically.
+     */
+    function renderMoneyTree() {
+        moneyTreeEl.innerHTML = '';
+        const ladderLength = 15; // Show the current question and the next 14.
+        
+        // Determine the starting index for the ladder display (ensuring current question is visible)
+        const displayStartIndex = Math.max(0, currentQuestionIndex - 7); // Start 7 questions before current
+
+        // Loop to generate prize info for questions to be displayed
+        for (let i = displayStartIndex; i < displayStartIndex + ladderLength; i++) {
+            
+            // Only render if a question actually exists at this index in the loaded set
+            if (i >= QUESTIONS.length) {
+                break; 
+            }
+            
+            const prizeIndex = i; // 0-based index
+            const questionNumber = prizeIndex + 1; // 1-based number
+            const prize = calculatePrize(prizeIndex); // Dynamic ₦2 per question
+            
+            const item = document.createElement('div');
+            let classes = 'money-tree-item ';
+            
+            // Highlight questions that, if answered correctly, secure a multiple of ₦100 (Q50, Q100, etc.)
+            const isSafetyPrizeLevel = (prize % 100 === 0 && prize !== 0);
+
+            if (isSafetyPrizeLevel) {
+                classes += 'safety ';
+            }
+
+            if (prizeIndex === currentQuestionIndex) {
+                classes += 'current ';
+            } else if (prizeIndex < currentQuestionIndex) {
+                classes += 'reached ';
+            } else {
+                classes += 'unreached ';
+            }
+
+            item.className = classes;
+            item.innerHTML = `<span>Q${questionNumber}</span> <span>₦${prize.toLocaleString()}</span>`;
+            moneyTreeEl.appendChild(item);
+        }
+        
+        // Reverse the order so the current question is near the bottom
+        const items = Array.from(moneyTreeEl.children);
+        moneyTreeEl.innerHTML = '';
+        items.reverse().forEach(item => moneyTreeEl.appendChild(item));
+    }
+    
+    function updateProgress() {
+        document.getElementById('currentWinnings').textContent = `₦${winnings.toLocaleString()}`; // UPDATED CURRENCY
+        renderMoneyTree();
+    }
+    
+    /**
+     * Handles the end of the game, saving the score if applicable.
+     */
+    async function endGame(wonMillion, walkedAway = false) { // ADDED walkedAway
+        if (!isGameRunning) return; // Prevent double-call
+        isGameRunning = false;
+        stopTimer();
+
+        const endTime = Date.now();
+        const timeTakenSeconds = Math.round((endTime - startTime) / 1000);
+        
+        let finalWinnings;
+        let message = '';
+        let modalTitle = 'Game Over';
+        // When wonMillion is true, it means all loaded questions were answered.
+        const finalPrizeValue = (QUESTIONS.length > 0) ? calculatePrize(QUESTIONS.length - 1) : 0; 
+
+        if (wonMillion) {
+            finalWinnings = finalPrizeValue; 
+            modalTitle = 'CHALLENGE COMPLETED!';
+            message = `You answered all ${QUESTIONS.length} loaded questions correctly and secured ₦${finalWinnings.toLocaleString()}! Your time was ${timeTakenSeconds} seconds. You will receive an airtime card for the amount won shortly.`;
+        } else if (walkedAway) { 
+            // If walked away, keep the current winnings
+            finalWinnings = winnings; 
+            modalTitle = 'YOU WALKED AWAY!';
+            message = `You wisely chose to walk away and secured ₦${finalWinnings.toLocaleString()} in winnings. Your time was ${timeTakenSeconds} seconds. You will receive an airtime card for the amount won shortly.`;
+        }
+        else {
+            // User lost. Drop to the last secured safety line (multiple of ₦100).
+            let securedAmount = 0;
+            const failedQuestionIndex = currentQuestionIndex;
+            
+            // The highest prize secured before the loss (the prize of the last correct answer)
+            const highestPrizeSecuredBeforeLoss = (failedQuestionIndex > 0) ? calculatePrize(failedQuestionIndex - 1) : 0;
+            
+            // Find the nearest multiple of 100 <= highestPrizeSecuredBeforeLoss
+            securedAmount = Math.floor(highestPrizeSecuredBeforeLoss / 100) * 100;
+
+            finalWinnings = securedAmount;
+            
+            modalTitle = 'CHALLENGE ENDED!';
+            if (finalWinnings === 0) {
+                 message = `You lost. Your winnings are ₦0. Better luck next time!`;
+            } else {
+                 message = `You finished the game with a final winning of ₦${finalWinnings.toLocaleString()}. Your time was ${timeTakenSeconds} seconds.`;
+                 if (gameMode === 'realMoney') {
+                     message += ` You will receive an airtime card for this amount shortly.`;
+                 }
+            }
+            if (gameMode === 'normal') {
+                 message = `You finished the game with a final winning of ₦${finalWinnings.toLocaleString()}. Score not saved and no prize is awarded in Normal Mode.`;
+            }
+        }
+        
+        // --- Save Score to Firestore (realMoney mode, submits final amount even if ₦0) ---
+        if (gameMode === 'realMoney' && isDbReady && userData.activationCode) {
+            showLoading();
+            try {
+                const docRef = doc(db, SCORES_COLLECTION_PATH, userId);
+                
+                const scoreData = {
+                    score: finalWinnings, 
+                    displayName: userData.displayName,
+                    userId: userId,
+                    timeTaken: timeTakenSeconds,
+                    activationCode: userData.activationCode,
+                    phoneNumber: userData.phoneNumber, // ADDED: Phone number
+                    submittedAt: serverTimestamp(),
+                };
+                
+                await setDoc(docRef, scoreData, { merge: true });
+                showToast(`Score of ₦${finalWinnings.toLocaleString()} submitted to the public leaderboard!`, 'success');
+
+            } catch (error) {
+                console.error("Error saving score:", error);
+                showToast(`Failed to submit score: ${error.message}`, 'error');
+            } finally {
+                hideLoading();
+            }
+        } else if (gameMode === 'normal') {
+            showToast('Game finished in Normal Mode. Score not saved.', 'info');
+        }
+
+        // Show the results modal
+        modalTitleEl.textContent = modalTitle;
+        modalWinningsEl.textContent = `₦${finalWinnings.toLocaleString()}`; // UPDATED CURRENCY
+        modalMessageEl.textContent = message;
+        gameResultModal.classList.remove('hidden');
+    }
+    
+    // --- Pre-Game Form Logic ---
+
+    document.getElementById('preGameForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        showLoading();
+        
+        const nameInput = document.getElementById('userNameInput').value.trim();
+        const phoneInput = document.getElementById('phoneNumberInput').value.trim(); // NEW
+        const codeInput = document.getElementById('activationCodeInput').value.trim();
+
+        // Basic phone number length validation (assuming 10-15 digits)
+        if (nameInput.length < 3 || codeInput.length < 8 || phoneInput.length < 10 || phoneInput.length > 15) {
+            hideLoading();
+            // Updated alert message to include phone
+            return showCustomAlert('Please ensure your name is at least 3 characters, phone number is complete (10-15 digits), and the activation code is 8 digits long.', 'Input Error');
+        }
+        
+        // --- Activation Code Validation (Against Firestore) ---
+        if (isDbReady) {
+            const codeDocRef = doc(db, ACTIVATION_CODE_PATH(codeInput));
+            
+            try {
+                const docSnap = await getDoc(codeDocRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    const expiryDate = data.expiryDate ? new Date(data.expiryDate.toDate()) : null; 
+                    const isValid = !expiryDate || expiryDate > new Date();
+
+                    if (isValid) {
+                        userData.displayName = nameInput;
+                        userData.activationCode = codeInput;
+                        userData.phoneNumber = phoneInput; // NEW: Store phone number
+                        
+                        preGameFormEl.classList.add('hidden');
+                        quizAreaEl.classList.remove('hidden');
+                        showToast(`Welcome, ${nameInput}! Activation confirmed. Good luck!`, 'success');
+                        
+                        startGame();
+
+                    } else {
+                        showCustomAlert('Your activation code has expired. Please contact support.', 'Code Expired');
+                    }
+                } else {
+                    showCustomAlert('Invalid activation code. Please check your 8-digit code and try again.', 'Invalid Code');
+                }
+            } catch (error) {
+                console.error("Error validating code:", error);
+                showCustomAlert(`Validation failed: ${error.message}. Proceeding to Normal Mode as fallback.`, 'Error');
+                
+                // Fallback to normal mode if validation fails critically
+                gameMode = 'normal';
+                userData.displayName = nameInput; 
+                userData.phoneNumber = phoneInput;
+                preGameFormEl.classList.add('hidden');
+                quizAreaEl.classList.remove('hidden');
+                startGame();
+            }
+        } else {
+            // If Firebase failed to initialize, still allow the user to start in Normal Mode
+            gameMode = 'normal';
+            userData.displayName = nameInput;
+            userData.phoneNumber = phoneInput;
+            preGameFormEl.classList.add('hidden');
+            quizAreaEl.classList.remove('hidden');
+            showToast('Cannot connect to database for activation. Starting in Normal Mode.', 'error');
+            startGame();
+        }
+
+        hideLoading();
+    });
+
+    // --- Event Listeners and Initial Setup ---
+    
+    // Lifeline buttons
+    document.getElementById('lifeline5050').addEventListener('click', () => useLifeLine('fiftyFifty'));
+    document.getElementById('lifelineExpert').addEventListener('click', () => useLifeLine('askExpert'));
+    
+    // Modal close button
+    modalCloseBtn.addEventListener('click', () => {
+        window.location.href = 'index.html'; // Go back to the main page
+    });
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        await firebaseInit();
+        await fetchQuestions(); // Load questions before initGame
+        initGame();
+        
+        customAlertCloseBtn.addEventListener('click', () => {
+            customAlertModal.classList.remove('active');
+        });
+    });
+</script>
+
+
+<div id="decisionModal" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 transition-opacity duration-300 opacity-0 pointer-events-none">
+  <div class="modal-content bg-[#1f084a] p-8 rounded-xl max-w-sm text-center transform scale-95 transition-transform duration-300 border-4 border-teal-400">
+    <h3 id="decisionModalTitle" class="text-xl font-bold text-yellow-400 mb-4">Continue?</h3>
+    <p id="decisionModalMessage" class="text-gray-200">Do you want to continue?</p>
+    <div class="flex justify-around mt-6 space-x-4">
+        <button id="decisionBtn1" class="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-md transition">Walk Away (Keep Winnings)</button>
+        <button id="decisionBtn2" class="flex-1 px-4 py-2 bg-teal-500 hover:bg-teal-600 text-black font-semibold rounded-lg shadow-md transition">Continue (Risk Winnings)</button>
+    </div>
+  </div>
+</div>
+
+
+<div id="customAlertModal" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 transition-opacity duration-300 opacity-0 pointer-events-none">
+  <div class="modal-content bg-[#1f084a] p-8 rounded-xl max-w-sm text-center transform scale-95 transition-transform duration-300 border-4 border-yellow-400">
+    <h3 id="customAlertTitle" class="text-xl font-bold text-yellow-400 mb-4">Alert</h3>
+    <p id="customAlertMessage" class="text-gray-200">This is a custom alert message.</p>
+    <button id="customAlertClose" class="mt-6 px-6 py-2 bg-teal-500 hover:bg-teal-600 text-black font-semibold rounded-lg shadow-md transition">OK</button>
+  </div>
+</div>
+<style>
+    #customAlertModal.active { opacity: 1; pointer-events: auto; }
+    #customAlertModal.active .modal-content { transform: scale(1); }
+</style>
+
+<div id="toast-container"></div>
+
+<div id="loading" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-40">
+    <div class="animate-spin rounded-full h-16 w-16 border-b-4 border-yellow-400"></div>
+</div>
+
+<div id="gameResultModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+    <div class="bg-[#0c0429] p-10 rounded-xl max-w-lg text-center border-4 border-teal-400 shadow-[0_0_50px_rgba(32,227,178,0.5)]">
+        <h2 id="modalTitle" class="text-3xl font-black mb-4 text-yellow-400">GAME OVER</h2>
+        <p class="text-lg text-gray-200 mb-2">Total Winnings:</p>
+        <p id="modalWinnings" class="text-5xl font-black mb-6 text-teal-40">₦0</p>
+        <p id="modalMessage" class="text-lg text-gray-300 mb-8"></p>
+        <button id="modalCloseBtn" class="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg shadow-lg transition">Return to Main Page</button>
+    </div>
+</div>
+
+<header class="w-full max-w-5xl text-center mb-8">
+    <h1 class="text-4xl font-black text-yellow-500 tracking-wider">
+        <i class="fas fa-money-bill-wave mr-3"></i> WHO WANTS TO BE A MILLIONAIRE?
+    </h1>
+    <p id="modeDisplay" class="text-xl font-bold text-teal-400 mt-2"></p>
+</header>
+
+
+<form id="preGameForm" class="hidden bg-gray-900 p-8 rounded-xl shadow-2xl w-full max-w-md border-2 border-teal-500">
+    <h2 class="text-2xl font-bold mb-6 text-teal-500">Claim Your Prize Challenge</h2>
+    
+    <div class="mb-4">
+        <label for="userNameInput" class="block text-sm font-medium text-gray-300 mb-2">Your Name (For Leaderboard)</label>
+        <input type="text" id="userNameInput" required placeholder="Enter your full name" 
+               class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-yellow-500 focus:border-yellow-500" 
+               minlength="3" maxlength="30">
+    </div>
+
+    <div class="mb-4">
+        <label for="phoneNumberInput" class="block text-sm font-medium text-gray-300 mb-2">Phone Number (To Receive Card)</label>
+        <input type="tel" id="phoneNumberInput" required placeholder="e.g. 08012345678" 
+               class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-yellow-500 focus:border-yellow-500" 
+               pattern="[0-9]{10,15}">
+        <p class="text-xs text-gray-400 mt-1">Your number is required to receive the airtime card if you win.</p>
+    </div>
+
+    <div class="mb-6">
+        <label for="activationCodeInput" class="block text-sm font-medium text-gray-300 mb-2">8-Digit Activation Code</label>
+        <input type="text" id="activationCodeInput" required placeholder="Enter your unique 8-digit code" 
+               class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-yellow-500 focus:border-yellow-500" 
+               minlength="8" maxlength="8">
+        <p class="text-xs text-gray-400 mt-1">Required for **Real Money Mode** to validate your entry and submit your final score.</p>
+    </div>
+    
+    <div class="p-3 bg-red-900 bg-opacity-30 border border-red-500 rounded-lg text-sm mb-6">
+        <p class="font-bold text-yellow-400 mb-2">Prize Conditions (Real Money Mode Only):</p>
+        <ul class="list-disc list-inside text-gray-300 space-y-1">
+            <li>By proceeding, you agree to these conditions.</li>
+            <li>Any amount won will be paid out *only* as an **airtime card** (or equivalent airtime top-up) sent to the phone number provided above.</li>
+            <li>The **Normal Mode** game does not qualify for any prize or airtime card.</li>
+            <li>The receipt of the card for the amount won is guaranteed *only* if you win in the **Real Money Mode** and submit your score successfully.</li>
+            <li>Note that these settings and conditions, including prize format and eligibility, can change at any time depending on the developers.</li>
+        </ul>
+    </div>
+
+    <button type="submit" class="w-full py-3 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold rounded-lg shadow-lg transition duration-200">
+        <i class="fas fa-play mr-2"></i> START QUIZ
+    </button>
+</form>
+
+
+<div id="mainQuizArea" class="game-container hidden">
+    
+    <div class="main-quiz-area">
+        
+        <div class="w-full h-2 bg-gray-700 rounded-lg overflow-hidden mb-6">
+            <div id="timerBar"></div>
+        </div>
+
+        <div class="flex justify-between items-center mb-6 border-b border-gray-700 pb-4">
+            <div id="lifelines" class="flex space-x-3">
+                <button id="lifeline5050" title="50:50" class="lifeline-btn p-3 bg-teal-500 hover:bg-teal-600 text-black rounded-full font-bold disabled:bg-gray-700 disabled:opacity-50">
+                    <i class="fas fa-divide"></i>
+                </button>
+                <button id="lifelineExpert" title="Ask the Expert" class="lifeline-btn p-3 bg-teal-500 hover:bg-teal-600 text-black rounded-full font-bold disabled:bg-gray-700 disabled:opacity-50">
+                    <i class="fas fa-user-tie"></i>
+                </button>
+            </div>
+            <div class="text-2xl font-black text-yellow-400">
+                Winnings: <span id="currentWinnings">₦0</span>
+            </div>
+        </div>
+
+        <div class="bg-gray-800 p-6 mb-8 rounded-lg border-2 border-yellow-500 shadow-inner">
+            <p id="questionText" class="text-2xl font-bold text-white text-center">Loading question...</p>
+        </div>
+
+        <div id="optionsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            </div>
+
+    </div>
+
+    <div class="bg-gray-900 p-4 rounded-xl shadow-lg border-2 border-teal-500">
+        <h3 class="text-xl font-bold text-center mb-4 text-teal-400 border-b border-teal-500 pb-2">Prize Ladder</h3>
+        <div id="moneyTree" class="flex flex-col-reverse">
+            </div>
+    </div>
+</div>
+
+</body>
+</html>
