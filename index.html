@@ -304,7 +304,7 @@ const firebaseConfig = {
             <span class="font-bold text-xl w-8 text-left">${index + 1}.</span>
             <span class="text-white ml-2">${scoreData.userName}</span>
           </div>
-          <span class="font-bold text-lg text-yellow-400">${scoreData.score.toFixed(0)} Points</span>
+          <span class="font-bold text-lg text-yellow-400">${scoreData.score.toFixed(0)} ₦AIRTIME</span>
         `;
         leaderboardBody.appendChild(item);
       });
@@ -343,7 +343,7 @@ const firebaseConfig = {
         setTimeout(() => { window.location.href = 'next.html?mode=normal'; }, 1000); 
       }
     } else {
-      showCustomAlert('Could not load questions. Check that "questions.json" exists and is valid.', 'Error Loading Data');
+      showCustomAlert('Could not load questions. Check that questions exists and is valid.', 'Error Loading Data');
     }
   }
   
